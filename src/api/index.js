@@ -1,4 +1,5 @@
 import axios from "axios";
+import { TOKEN } from "../const/auth";
 const baseURL = "http://192.168.0.110:8000/api/v1/";
 
 const axiosInstance = axios.create({
@@ -7,17 +8,16 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   async config => {
-    // const headers = { apikey };
-    // try {
-    //   const token = await getStorage(TOKEN);
-    //   if (token) {
-    //     headers["Authorization"] = `jwt ${token}`;
-    //   }
-    // } catch (e) {
-    //   throw e;
-    // }
-
-    // config.headers = headers;
+    const headers = {};
+    try {
+      const token = await localStorage.getItem(TOKEN);
+      if (token) {
+        headers["Authorization"] = `Token ${token}`;
+      }
+    } catch (e) {
+      throw e;
+    }
+    config.headers = headers;
 
     return config;
   },

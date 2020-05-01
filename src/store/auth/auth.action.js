@@ -27,4 +27,8 @@ export class AuthAction {
     localStorage.setItem(TOKEN, this.token);
   }
 
+  getUser() {
+    axiosInstance.get(`auth/me/`).then(({data}) => this.user = data);
+  }
+
 }

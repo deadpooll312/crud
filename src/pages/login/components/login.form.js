@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./login.form.scss";
 
 export const LoginForm = memo(({formik}) => {
-  return <div className="container">
+  return <div>
   <form onSubmit={formik.handleSubmit}>
     <div className="form-group">
       <label htmlFor="email">Email address:</label>

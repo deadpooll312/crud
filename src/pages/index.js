@@ -3,13 +3,13 @@ import { Provider } from "mobx-react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 // local files
 import { PrivateRoute } from "./Private";
-import {MainPage} from "./Main";
+import {MainPage} from "./main/Main";
 import {LoginPage} from "./login/Login";
-import store from '../store';
 import { SignUpPage } from "./signup/Signup";
+import store from '../store';
 
 export default function App() {
-  return (
+  return <div className="container">
     <Provider store={store}>
       <BrowserRouter>
         <Switch>
@@ -19,5 +19,5 @@ export default function App() {
         </Switch>
       </BrowserRouter>
     </Provider>
-  );
+  </div>
 }
