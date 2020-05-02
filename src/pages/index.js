@@ -1,23 +1,21 @@
 import React from "react";
 import { Provider } from "mobx-react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import {Container} from '@material-ui/core';
+
 // local files
-import { PrivateRoute } from "./Private";
-import {MainPage} from "./main/Main";
-import {LoginPage} from "./login/Login";
-import { SignUpPage } from "./signup/Signup";
+import {MainPage} from "./Main/Main";
 import store from '../store';
 
 export default function App() {
-  return <div className="container">
+  return <Container>
     <Provider store={store}>
       <BrowserRouter>
         <Switch>
-          <PrivateRoute exact path="/" component={(props) => <MainPage {...props} />}/>
-          <Route exact path="/login" component={(props) => <LoginPage {...props} />}/>
-          <Route path="/signup" component={(props) => <SignUpPage {...props} />}/>
+          <Route exact path="/" component={(props) => <MainPage {...props} />}/>
+          <Route path="*" component={(props) => <MainPage {...props} />}/>
         </Switch>
       </BrowserRouter>
     </Provider>
-  </div>
+  </Container>
 }

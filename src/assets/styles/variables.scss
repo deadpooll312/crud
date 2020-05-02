@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Regular';
+  src: url("../fonts/Montserrat-Regular.ttf");
+}
+@font-face {
+  font-family: 'Light';
+  src: url("../fonts/Montserrat-Light.ttf");
+}
+@font-face {
+  font-family: 'Bold';
+  src: url("../fonts/Montserrat-Bold.ttf");
+}
+
+$regular: Regular;
+$bold: Bold;
+$light: Light;
+
+$blue: #1153ff;

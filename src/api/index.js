@@ -1,6 +1,6 @@
 import axios from "axios";
 import { TOKEN } from "../const/auth";
-const baseURL = "http://192.168.0.110:8000/api/v1/";
+const baseURL = "http://w.beeyonance.exchange/api/v1/";
 
 const axiosInstance = axios.create({
   baseURL

@@ -1,0 +1,36 @@
+.login {
+
+  h2 {
+    font-size: 18px;
+    font-family: $bold;
+    margin-bottom: 30px;
+  }
+
+  div {
+    display: block;
+  }
+
+  .input-wrapper {
+    margin-bottom: 15px;
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      padding-top: 15px;
+      font-size: 14px;
+      color: $blue;
+      display: block;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  p {
+    font-size: 12px;
+    text-align: center;
+  }
+
+}
