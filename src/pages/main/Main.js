@@ -1,5 +1,5 @@
-import React, { useState, Fragment, useCallback } from "./node_modules/react";
-import { inject, observer } from "./node_modules/mobx-react";
+import React, { useState, Fragment, useCallback } from "react";
+import { inject, observer } from "mobx-react";
 import axiosInstance from "../../api";
 import {LoginPopup} from './components/login.popup';
 import { SignUpPopup } from "./components/signup.popup";

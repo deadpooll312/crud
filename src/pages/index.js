@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import {Container} from '@material-ui/core';
 
 // local files
-import {MainPage} from "./main/main";
+import {MainPage} from "./main/Main";
 import store from '../store';
 
 export default function App() {
