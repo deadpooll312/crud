@@ -37,6 +37,46 @@
   display: flex;
 }
 
+.information-tooltip{
+  position: fixed;
+  right: 0;
+  bottom: 50px;
+  background-color: #B8FFBB;
+  padding: 25px 30px;
+  width: 100%;
+  max-width: 540px;
+  z-index: 3;
+
+  .close-icon{
+    position: absolute;
+    right: 16px;
+    top: 10px;
+    cursor: pointer;
+    color: #232323;
+  }
+  p{
+    color: #232323;
+    span{
+      color: #232323;
+      position: relative;
+      font-size: 12px;
+      display: inline-block;
+      margin-right: 10px;
+      &:before{
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid #232323;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}
+
 .header{
   position: absolute;
   top: 0;

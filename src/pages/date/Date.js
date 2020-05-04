@@ -81,5 +81,10 @@ export const Date = inject("store")(observer(({store, props}) => {
             </div>
         </div>
 
+        <div className="information-tooltip">
+            <div className="close-icon">x</div>
+            <p><span>i</span> Для этого вам необходимо пополнить баланс</p>
+        </div>
+
     </Fragment>
 }));
