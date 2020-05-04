@@ -14,5 +14,26 @@
 $regular: Regular;
 $bold: Bold;
 $light: Light;
-
 $blue: #1153ff;
+
+h1, h2, h3, h4, h5, a, p, ul, li, button{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  letter-spacing: 0.02em;
+}
+
+ul{
+  list-style-type: none;
+}
+
+$brand-color: #FFB900;
+$second-color: #002F56;
+
+
+body{
+  font-family: $light;
+  margin: 0;
+}
+
