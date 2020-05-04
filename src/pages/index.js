@@ -8,14 +8,12 @@ import {MainPage} from "./main/Main";
 import store from '../store';
 
 export default function App() {
-  return <Container>
-    <Provider store={store}>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={(props) => <MainPage {...props} />}/>
-          <Route path="*" component={(props) => <MainPage {...props} />}/>
-        </Switch>
-      </BrowserRouter>
-    </Provider>
-  </Container>
+  return <Provider store={store}>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={(props) => <MainPage {...props} />}/>
+        <Route path="*" component={(props) => <MainPage {...props} />}/>
+      </Switch>
+    </BrowserRouter>
+  </Provider>
 }
