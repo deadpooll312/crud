@@ -1,94 +1,12 @@
-.MuiContainer-root, .MuiContainer-maxWidthLg{
-  max-width: 100%;
-  min-width: auto;
-  width: 100%;
-  padding: 0;
-}
-
-.delete-class{
-  display: none;
-  opacity: 0;
-  z-index: 0;
-}
-
-.container{
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  width: 1170px;
-}
-
-.container_small{
-  width: 840px;
-}
-
-.container_medium{
-  width: 980px;
-}
-
-.container_large{
-  width: 1100px;
-}
-
-.btn{
-  transition: .3s;
-  font-weight: bold;
-  &:hover{
-    cursor: pointer;
-  }
-}
-
-.flex-wrapper{
-  display: flex;
-}
-
-.information-tooltip{
-  position: fixed;
-  right: 0;
-  bottom: 50px;
-  background-color: #B8FFBB;
-  padding: 25px 30px;
-  width: 100%;
-  max-width: 540px;
-  z-index: 3;
-
-  .close-icon{
-    position: absolute;
-    right: 16px;
-    top: 10px;
-    cursor: pointer;
-    color: #232323;
-  }
-  p{
-    color: #232323;
-    span{
-      color: #232323;
-      position: relative;
-      font-size: 12px;
-      display: inline-block;
-      margin-right: 10px;
-      &:before{
-        position: absolute;
-        content: "";
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border: 1px solid #232323;
-        border-radius: 50%;
-        width: 18px;
-        height: 18px;
-      }
-    }
-  }
-}
-
 .header{
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   padding: 7vh 0;
+  &.dark-header{
+    background-color: #232323;
+  }
   .flex-wrapper{
     justify-content: space-between;
   }
@@ -462,5 +380,65 @@
   }
   .modal-inner.modal-log-in{
     display: none;
+  }
+}
+
+.pour-in_modal-wrapper{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.pour-in_modal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #232323;
+  border-radius: 4px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.5);
+  width: 360px;
+  h3{
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #fff;
+  }
+  .pour-in-field{
+    width: calc(100% - 30px);
+    margin-bottom: 30px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    height: 50px;
+    border-radius: 8px;
+    color: #fff;
+    padding: 0 15px;
+  }
+  .btns-wrapper{
+    display: flex;
+    justify-content: space-between;
+    .btn-pour-in{
+      width: 45%;
+      height: 50px;
+      color: #fff;
+      background: $brand-color;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      &:hover{
+        background: #E39600;
+      }
+    }
+    .btn-cancel{
+      width: 45%;
+      height: 50px;
+      color: #fff;
+      background-color: transparent;
+      border: 1px solid #fff;
+      border-radius: 8px;
+    }
   }
 }

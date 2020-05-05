@@ -46,5 +46,10 @@ export const DateHistory = inject('store')(observer(({store}) => {
         <li><a href=""><span className="arrow_pagination to-last"></span></a></li>
       </ul>
     </div>
+
+    {/*<div className="history-inner history-empty">*/}
+    {/*  <h3>Здесь будет отображаться история ваших операций</h3>*/}
+    {/*</div>*/}
+
   </div>
 }));

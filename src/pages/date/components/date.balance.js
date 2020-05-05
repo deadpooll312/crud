@@ -20,7 +20,6 @@ export const DateBalance = inject('store')(observer(({store}) => {
       </div>
       {/*<h3 className="title date-title">Последние Выбранные даты</h3>*/}
       {/*<ul className="list_last-date">*/}
-
       {/*  <li className='item_last-date'>01.07.20</li>*/}
       {/*  <li className='item_last-date'>01.07.20</li>*/}
       {/*  <li className='item_last-date'>01.07.20</li>*/}
