@@ -14,9 +14,6 @@ export const Final = inject("store")(observer(({store, props}) => {
           <div className="btn_wrapper">
             <button className="btn btn-back" onClick={() => history.push('/date')}>В личный кабинет</button>
           </div>
-          <div className="btn_wrapper">
-            <button className="btn btn-back" onClick={() => history.push('/')}>На главную</button>
-          </div>
         </div>
       </div>
     </div>

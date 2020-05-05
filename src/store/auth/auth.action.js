@@ -37,5 +37,11 @@ export class AuthAction {
   getUser() {
     axiosInstance.get(`auth/me/`).then(({data}) => this.user = data);
   }
+  
+  fill(balance) {
+    axiosInstance.post(`auth/balance/fill/`, {balance}).then(({data}) => {
+      window.open(data.data.url, '_blank');
+    });
+  }
 
 }

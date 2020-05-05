@@ -14,12 +14,12 @@ export const MainPage = inject("store")(observer(({store}) => {
     
     const scroll = useCallback(() => {
       scrollToRef(banner);
-    }, []);
+    }, [banner]);
     
-    const registration = useCallback(() => {
-      history.push('/account');
-    }, []);
-
+    const push = useCallback((path) => {
+      history.push(`/${path}`);
+    }, [history]);
+    
     return (
       <Fragment>
         <LoginPopup show={show} toggleModal={() => setShow(false)}/>
@@ -31,9 +31,13 @@ export const MainPage = inject("store")(observer(({store}) => {
                 <a href="#" className="link-item" onClick={scroll}>Сделать ставку</a>
                 <a href="#" className="link-item">Правила</a>
               </div>
+              
               <div className="registration-wrapper_header">
-                <button className="btn btn-sing-in" onClick={registration}>Регистрация</button>
-                <button className="btn btn-log-in" onClick={() => setShow(true)}>Вход</button>
+                {store.auth.user.email ? <Fragment>
+                    <button className="btn btn-sing-in" onClick={() => push('account')}>Регистрация</button>
+                    <button className="btn btn-log-in" onClick={() => setShow(true)}>Вход</button>
+                  </Fragment>
+                  : <button className="btn btn-log-in" onClick={() => push('date')}>Сделать ставку</button>}
               </div>
             </div>
           </div>
