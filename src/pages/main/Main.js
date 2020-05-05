@@ -19,7 +19,7 @@ export const MainPage = inject("store")(observer(({store}) => {
     const registration = useCallback(() => {
       history.push('/account');
     }, []);
-    
+
     return (
       <Fragment>
         <LoginPopup show={show} toggleModal={() => setShow(false)}/>

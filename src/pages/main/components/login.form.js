@@ -1,35 +1,31 @@
-import React, {memo, useCallback} from "react";
-// local files
-import {InputComponent} from '../../../components/input';
-import {SIGNUP} from '../../../const/popup.const';
-import {ButtonComponent } from "../../../components/button";
-import {useHistory} from "react-router";
+import React, {memo} from "react";
 
 export const LoginForm = memo(({ formik, toggleModal }) => {
-  const history = useHistory();
-  
-  const registration = useCallback(() => {
-    history.push('/account');
-  }, []);
-  
   return (
     <div className="login">
-      <form onSubmit={formik.handleSubmit} noValidate autoComplete="off">
-        <div className="title"><h2>Вход</h2><span onClick={registration}>Регистрация</span></div>
-        <InputComponent
-          id="email"
-          error={formik.errors.email}
-          label="E-mail"
-          onChange={formik.handleChange}
-          />
-        <InputComponent
-          id="password"
-          error={formik.errors.password}
-          label="Password"
-          onChange={formik.handleChange}
-          />
-        <ButtonComponent text="Войти" type="submit" fullWidth margin gradient/>
-        <ButtonComponent onClick={() => toggleModal()} text="Отмена" fullWidth/>
+      <form onSubmit={formik.handleSubmit}>
+        <div className="field_wrapper">
+          {formik.errors.email && <i>{formik.errors.email}</i>}
+          <input
+            id="email"
+            onChange={formik.handleChange}
+            className="field_form"
+            type="text"
+            placeholder="E-mail"/>
+        </div>
+        <div className="field_wrapper">
+          {formik.errors.password && <i>{formik.errors.password}</i>}
+          <input
+            id="password"
+            onChange={formik.handleChange}
+            className="field_form"
+            type="password"
+            placeholder="Пароль"/>
+        </div>
+        <div className="btn_wrapper">
+          <button className="btn btn-reg" type="submit">Вход</button>
+          <span onClick={toggleModal} className="btn btn-reg" type="submit">Отмена</span>
+        </div>
       </form>
     </div>
   );

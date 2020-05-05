@@ -1,32 +1,13 @@
 import React, {Fragment} from 'react';
 import {inject, observer} from "mobx-react";
+import {SignUpPopup} from "../main/components/signup.popup";
 
 export const Account = inject("store")(observer(({store, props}) => {
   return <Fragment>
     <div className="account-section">
       <div className="container">
         <div className="flex-wrapper">
-          
-          <div className="registration_block">
-            <form action="">
-              <div className="field_wrapper">
-                <input className="field_form" type="text" placeholder="ФИО"/>
-              </div>
-              <div className="field_wrapper">
-                <input className="field_form" type="email" placeholder="E-mail"/>
-              </div>
-              <div className="field_wrapper">
-                <input className="field_form" type="text" placeholder="Мобильный телефон"/>
-              </div>
-              <div className="btn_wrapper">
-                <button className="btn btn-reg">Зарегистрироваться</button>
-              </div>
-            </form>
-            <div className="sub-info_wrapper">
-              <span>i</span>
-              <p>Ты можешь выбрать любую дату, но только один раз</p>
-            </div>
-          </div>
+          <SignUpPopup />
           
           <div className="date_block">
             <h3>Ты можешь <br/>выбрать любое <br/>количество дат!</h3>

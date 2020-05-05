@@ -11,15 +11,22 @@ export class AuthAction {
     this.token = null;
   }
 
-  signIn(data) {
-    console.log('signIn', data);
+  signIn(formData, history) {
+    const data = {...formData, email: formData.email.toLocaleLowerCase()};
     axiosInstance.post(`auth/sign-in/`, data)
-      .then(({data}) => this.updateToken(data && data.token));
+      .then(({data}) => {
+        history.push('/date');
+        this.updateToken(data && data.token);
+      });
   }
 
-  signUp(data) {
+  signUp(formData, history) {
+    const data = {...formData, email: formData.email.toLocaleLowerCase()};
     axiosInstance.post(`auth/sign-up/`, data)
-      .then(({data}) => this.updateToken(data && data.token));
+      .then(({data}) => {
+        history.push('/final');
+        this.updateToken(data && data.token);
+      });
   }
 
   updateToken(token) {
