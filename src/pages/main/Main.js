@@ -91,7 +91,6 @@ export const MainPage = inject("store")(observer(({store}) => {
             </div>
           </div>
         </div>
-      
       </Fragment>
     );
   })
