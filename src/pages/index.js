@@ -13,7 +13,7 @@ export default function App() {
   return <Provider store={store}>
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={(props) => <MainPage {...props} />}/>
+        <Route exact path="/" component={MainPage} />
         <Route exact path="/final" component={(props) => <Final {...props} />}/>
         <Route exact path="/account" component={(props) => <Account {...props} />}/>
         <Route exact path="/date" component={(props) => <Date {...props} />}/>
