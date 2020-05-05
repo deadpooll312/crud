@@ -6,7 +6,7 @@
   background-position: center;
   background-size: cover;
   .flex-wrapper{
-
+    justify-content: space-between;
   }
   .title{
     margin-bottom: 30px;
@@ -22,10 +22,10 @@
     }
   }
   .history-block{
-    width: 45%;
+    width: 64%;
+    padding-right: 15px;
     .history-inner{
-      width: 90%;
-      max-width: 445px;
+      width: 100%;
       background: #232323;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
       border-radius: 8px;
@@ -37,8 +37,10 @@
         display: flex;
         border-bottom: 1px solid rgba(255, 255, 255, 0.4);
         justify-content: space-between;
+        align-items: center;
         padding: 15px 0;
-        p{
+        .title_item{
+          width: 48%;
           font-size: 16px;
           color: #fff;
           font-weight: 700;
@@ -46,29 +48,111 @@
             color: $brand-color;
           }
         }
-        span{
+        .status_item{
+          width: 20%;
+          font-size: 14px;
+          &.status-win{
+            color: #3BD39D;
+          }
+          &.status-loss{
+            color: #DB1430;
+          }
+          &.status-undefined{
+            color: #E39600;
+          }
+        }
+        .hash_item{
+          width: 16%;
+          color: $brand-color;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+        .date_item{
+          width: 16%;
           font-size: 14px;
           color: #fff;
+          text-align: right;
         }
       }
     }
     .pagination{
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
+      padding-left: 30px;
       li{
         font-size: 14px;
         margin: 0 3px;
         transition: .3s;
+        width: 30px;
+        height: 30px;
         a{
+          display: block;
+          height: 100%;
           color: #515151;
+          line-height: 30px;
+          text-align: center;
           transition: .3s;
         }
-        span{
-          color: #fff;
+        .arrow_pagination{
           position: relative;
+          display: block;
+          width: 100%;
+          height: 100%;
+          color: #fff;
           background: rgba(255, 255, 255, 0.04);
-          border-radius: 50%;
-          padding: 5px;
+          border-radius: 8px;
+          transition: .3s;
+          &:hover{
+            background: rgba(255, 255, 255, 0.09);
+          }
+          &:before, &:after{
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-repeat: no-repeat;
+            width: 8px;
+            height: 8px;
+          }
+          &.to-first{
+            margin-right: 4px;
+            &:before{
+              background-image: url(../images/arrow-prev-pagination.svg);
+            }
+            &:after{
+              left: calc(50% + 5px);
+              background-image: url(../images/arrow-prev-pagination.svg);
+            }
+          }
+          &.to-previous{
+            margin-right: 4px;
+            &:before{
+              background-image: url(../images/arrow-prev-pagination.svg);
+            }
+            &:after{
+              display: none;
+            }
+          }
+          &.to-next{
+            margin-left: 4px;
+            &:before{
+              background-image: url(../images/arrow-next-pagination.svg);
+            }
+            &:after{
+              display: none;
+            }
+          }
+          &.to-last{
+            margin-left: 4px;
+            &:before{
+              background-image: url(../images/arrow-next-pagination.svg);
+            }
+            &:after{
+              left: calc(50% + 5px);
+              background-image: url(../images/arrow-next-pagination.svg);
+            }
+          }
         }
         &.active{
           background: #002F56;
@@ -86,7 +170,8 @@
     }
   }
   .info-block{
-    width: 55%;
+    width: 33%;
+    padding-left: 15px;
     p{
       margin-bottom: 30px;
       font-size: 18px;
@@ -95,7 +180,25 @@
     }
     .btn_wrapper{
       margin-bottom: 50px;
+      .btn{
+        margin-bottom: 30px;
+      }
       .btn-pour-in{
+        width: 100%;
+        max-width: 350px;
+        padding: 15px;
+        background-color: $brand-color;
+        box-shadow: 0px 4px 16px #E39600;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        font-size: 18px;
+        color: #fff;
+        &:hover{
+          background-color: #06477e;
+          color: #fff;
+        }
+      }
+      .btn-bring-out{
         width: 100%;
         max-width: 350px;
         padding: 15px;

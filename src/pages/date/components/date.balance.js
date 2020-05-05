@@ -16,15 +16,17 @@ export const DateBalance = inject('store')(observer(({store}) => {
         <button
           onClick={() => setShow(true)}
           className="btn btn-pour-in">Пополнить баланс</button>
+        <button className="btn btn-bring-out">Вывести средства</button>
       </div>
-      <h3 className="title date-title">Последние Выбранные даты</h3>
-      <ul className="list_last-date">
-        <li className='item_last-date'>01.07.20</li>
-        <li className='item_last-date'>01.07.20</li>
-        <li className='item_last-date'>01.07.20</li>
-        <li className='item_last-date'>01.07.20</li>
-        <li className='item_last-date'>01.07.20</li>
-      </ul>
+      {/*<h3 className="title date-title">Последние Выбранные даты</h3>*/}
+      {/*<ul className="list_last-date">*/}
+
+      {/*  <li className='item_last-date'>01.07.20</li>*/}
+      {/*  <li className='item_last-date'>01.07.20</li>*/}
+      {/*  <li className='item_last-date'>01.07.20</li>*/}
+      {/*  <li className='item_last-date'>01.07.20</li>*/}
+      {/*  <li className='item_last-date'>01.07.20</li>*/}
+      {/*</ul>*/}
     </div>
   </Fragment>
 }));
