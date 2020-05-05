@@ -10,18 +10,48 @@
   font-family: 'Bold';
   src: url("../fonts/Montserrat-Bold.ttf");
 }
+@font-face {
+  font-family: 'ProximaNova-Bold';
+  src: url("../fonts/ProximaNova-Bold.ttf");
+  src: url("../fonts/ProximaNova-Bold.eot");
+  src: url("../fonts/ProximaNova-Bold.woff");
+  src: url("../fonts/ProximaNova-Bold.woff2");
+}
+@font-face {
+  font-family: 'ProximaNova-Regular';
+  src: url("../fonts/ProximaNova-Regular.ttf");
+  src: url("../fonts/ProximaNova-Regular.eot");
+  src: url("../fonts/ProximaNova-Regular.woff");
+  src: url("../fonts/ProximaNova-Regular.woff2");
+}
+@font-face {
+  font-family: 'ProximaNova-Semibold';
+  src: url("../fonts/ProximaNova-Semibold.ttf");
+  src: url("../fonts/ProximaNova-Semibold.eot");
+  src: url("../fonts/ProximaNova-Semibold.woff");
+  src: url("../fonts/ProximaNova-Semibold.woff2");
+}
+
+
+$prox-bold: ProximaNova-Bold;
+$prox-semibold: ProximaNova-Semibold;
+$prox-rigular: ProximaNova-Regular;
 
 $regular: Regular;
 $bold: Bold;
 $light: Light;
 $blue: #1153ff;
 
-h1, h2, h3, h4, h5, a, p, ul, li, button{
+h1, h2, h3, h4, h5, h6, a, p, ul, li, button{
   margin: 0;
   padding: 0;
   text-decoration: none;
   outline: none;
   letter-spacing: 0.02em;
+}
+
+a, button{
+  transition: .3s;
 }
 
 ul{
@@ -33,7 +63,7 @@ $second-color: #002F56;
 
 
 body{
-  font-family: $light;
+  font-family: $prox-rigular;
   margin: 0;
 }
 

@@ -90,7 +90,7 @@ export const MainPage = inject("store")(
           </div>
 
           <div className="regulations_section">
-              <div className="container container_custom">
+              <div className="container container_large">
                     <div className="flex-wrapper">
                         <div className="left-block item-regulations">
                             <h3>Команда befree.bingo</h3>
@@ -123,6 +123,34 @@ export const MainPage = inject("store")(
                       <a href="#">Правила</a>
                   </div>
               </div>
+          </div>
+
+          <div className="modal-popup_wrapper delete-class">
+              <div className="modal-inner modal-regist">
+                  <div className="header_modal">
+                      <h4>Регистрация</h4>
+                      <h6>Have an account? <a href="#">Login</a></h6>
+                  </div>
+                  <div className="body_modal">
+                      <form action="">
+                          <div className="field_wrapper">
+                              <input className="field_form" type="email" placeholder="E-mail"/>
+                          </div>
+                          <div className="field_wrapper">
+                              <input className="field_form" type="text" placeholder="Пароль"/>
+                          </div>
+                          <div className="field_wrapper">
+                              <input className="field_form" type="text" placeholder="Подтвердите пароль"/>
+                          </div>
+                          <div className="btn_wrapper">
+                              <button className="btn btn-reg">Зарегистрироваться</button>
+                          </div>
+                      </form>
+                  </div>
+                  <div className="footer_body">
+                  </div>
+              </div>
+              <div className="modal-inner modal-log-in"> </div>
           </div>
 
       </Fragment>
