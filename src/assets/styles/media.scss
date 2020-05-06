@@ -1,0 +1,172 @@
+@media (min-width: 320px) and (max-width: 576px) {
+
+  html{
+    font-size: 14px;
+  }
+
+  .container{
+    width: calc(100% - 30px);
+  }
+
+  .header{
+    display: none;
+  }
+
+  .main-banner{
+    text-align: center;
+    min-height: 100%;
+    h1{
+      font-size: 2rem;
+      line-height: 40px;
+      br{
+        display: none;
+      }
+    }
+    ul{
+      li{
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .to-win_section{
+    .title_to-win{
+      font-size: 2rem;
+      line-height: 40px;
+    }
+    .item_to-win{
+      width: 100%;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .regulations_section {
+    padding-top: 90px;
+    padding-bottom: 70px;
+    .container_custom{
+      width: 100%;
+      padding: 0;
+    }
+    .flex-wrapper{
+      flex-wrap: wrap;
+      box-shadow: none;
+      padding: 20px 15px;
+    }
+    .item-regulations{
+      width: 100%;
+      margin-bottom: 30px;
+      box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      background-color: #fff;
+    }
+    .left-block{
+      min-height: 310px;
+      &:before{
+        border-radius: 8px;
+      }
+    }
+    .center-block{
+      min-height: 340px;
+    }
+    .right-block{
+      min-height: 100%;
+    }
+  }
+
+  .referral_section{
+    h3{
+      font-size: 2rem;
+      line-height: 40px;
+    }
+    p{
+      font-size: 1.25rem;
+      line-height: 30px;
+    }
+  }
+
+  .footer{
+    padding-bottom: 60px;
+    .flex-wrapper{
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      a{
+        margin-bottom: 20px;
+        &:before{
+          width: 50%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  .date-section {
+    .flex-wrapper{
+      flex-wrap: wrap;
+    }
+    .history-block{
+      width: 100%;
+      order: 2;
+      .title{
+        text-align: center;
+      }
+    }
+    .info-block{
+      width: 100%;
+      order: 1;
+      text-align: center;
+    }
+    .field-wrapper{
+      margin-top: 70px;
+      padding:0;
+      .date-entry-inner{
+        background-size: 100%;
+      }
+      .date-field{
+        width: 100%;
+        min-width: auto;
+        font-size: 3rem;
+      }
+    }
+    .btns_wrapper{
+      flex-wrap: wrap;
+      .btn-input{
+        margin-bottom: 30px;
+      }
+      .btn-date{
+        &.active{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .personal-data-section{
+    .flex-wrapper{
+      flex-wrap: wrap;
+    }
+    .data-personal, .promocode-personal, .info-personal{
+      width: 100%;
+      margin-bottom: 50px;
+      .title{
+        text-align: center;
+      }
+    }
+    .promocode-personal{
+      .field_wrapper{
+        .promocode_field{
+          width: calc(100% - 30px);
+          max-width: 100%;
+        }
+      }
+    }
+    .info-personal{
+      margin-bottom: 0;
+    }
+  }
+
+}

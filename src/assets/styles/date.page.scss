@@ -1,5 +1,5 @@
 .date-section{
-  padding: 110px;
+  padding: 110px 0;
   min-height: 100vh;
   background-image: url(../images/date-banner-bg.jpg);
   background-repeat: no-repeat;
@@ -10,7 +10,7 @@
   }
   .title{
     margin-bottom: 30px;
-    font-size: 32px;
+    font-size: 2rem;
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;
@@ -329,7 +329,7 @@
     padding: 0 15px;
     .title{
       margin-bottom: 30px;
-      font-size: 28px;
+      font-size: 1.75rem;
       color: #fff;
       text-transform: uppercase;
     }
@@ -337,6 +337,7 @@
   .data-personal{
     .item_data{
       position: relative;
+      min-height: 40px;
       margin-bottom: 30px;
       padding: 12px 15px;
       border: 1px solid #fff;
@@ -364,8 +365,9 @@
       .promocode_field{
         width: 100%;
         max-width: 320px;
+        min-height: 40px;
         margin-bottom: 30px;
-        padding: 13px 15px;
+        padding: 12px 15px;
         background-color: transparent;
         border: 1px solid #fff;
         border-radius: 8px;
