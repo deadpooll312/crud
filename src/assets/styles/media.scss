@@ -9,7 +9,23 @@
   }
 
   .header{
-    display: none;
+    .links-wrapper_header{
+      .brand-link{
+        font-size: 1.5rem;
+      }
+      .link-item{
+        display: none;
+      }
+    }
+    .registration-wrapper_header{
+      display: none;
+    }
+    .burger-btn{
+      display: block;
+    }
+    .mobile-list{
+      display: block;
+    }
   }
 
   .main-banner{

@@ -6,6 +6,7 @@ import {SignUpPopup} from "./components/signup.popup";
 
 export const MainPage = inject("store")(observer(({store}) => {
     const [show, setShow] = useState(null);
+    const [showMenu, setShowMenu] = useState(false);
     const history = useHistory();
     const banner = useRef(null);
     const programRef = useRef(null);
@@ -49,6 +50,15 @@ export const MainPage = inject("store")(observer(({store}) => {
                 <a href="#" className="link-item" onClick={() => scroll(banner)}>Правила</a>
                 <a href="#" className="link-item" onClick={() => scroll(programRef)}>Реферальная программа</a>
               </div>
+
+              <span className="burger-btn" onClick={() => setShowMenu(true)}><i></i></span>
+              {showMenu && <ul className="mobile-list">
+                <li><a href="#" className="link-item" onClick={() => scroll(banner)}>Сделать ставку</a></li>
+                <li><a href="#" className="link-item" onClick={() => scroll(banner)}>Правила</a></li>
+                <li><a href="#" className="link-item" onClick={() => scroll(programRef)}>Реферальная программа</a></li>
+                <li><button className="btn btn-sing-in" onClick={() => setShow('signup')}>Регистрация</button></li>
+                <li><button className="btn btn-log-in" onClick={() => setShow('login')}>Вход</button></li>
+              </ul>}
               
               <div className="registration-wrapper_header">
                 {!store.auth.user.email ? <Fragment>
