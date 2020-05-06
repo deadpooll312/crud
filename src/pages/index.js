@@ -16,10 +16,8 @@ export default function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={MainPage} />
-        <Route exact path="/final" component={Final}/>
         <Route path="/success" component={SuccessPage} />
           <Route path="/failed" component={FailedPage} />
-        <Route exact path="/account" component={(props) => <Account {...props} />}/>
         <Route exact path="/date" component={(props) => <Date {...props} />}/>
         <Route path="*" component={(props) => <MainPage {...props} />}/>
       </Switch>

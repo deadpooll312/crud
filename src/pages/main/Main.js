@@ -1,4 +1,4 @@
-import React, {Fragment, useRef, useCallback, useState} from "react";
+import React, {Fragment, useRef, useCallback, useState, useEffect} from "react";
 import {inject, observer} from "mobx-react";
 import {useHistory} from "react-router";
 import {LoginPopup} from "./components/login.popup";
@@ -12,6 +12,8 @@ export const MainPage = inject("store")(observer(({store}) => {
       top: ref.current.offsetTop,
       behavior: 'smooth',
     });
+    
+    useEffect(() => store.auth.getUser(),[])
     
     const scroll = useCallback(() => {
       scrollToRef(banner);

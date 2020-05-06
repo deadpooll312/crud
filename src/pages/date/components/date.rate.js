@@ -13,7 +13,7 @@ export const DateRate = inject('store')(observer(({store}) => {
   const {auth} = store;
   const date = new Date();
   const day = ("0" + date.getDate()).slice(-2);
-  const month = ("0" + date.getMonth()).slice(-2);
+  const month = ("0" + (date.getMonth() + 1)).slice(-2);
   const [dateValue, setValue] = useState(`${day}/${month}/20`);
   const [amount, setAmount] = useState(0);
   const [show, setShow] = useState(false);
@@ -69,7 +69,7 @@ export const DateRate = inject('store')(observer(({store}) => {
       </div>
       <div className="container container_small">
         <div className="field-wrapper date-entry-block">
-          {showSuccess && <h1 className="success">Вы сделал ставку поздравляем</h1>}
+          {showSuccess && <h1 className="success">Вы сделали ставку поздравляем</h1>}
   
           <div className="date-entry-inner">
             <InputMask

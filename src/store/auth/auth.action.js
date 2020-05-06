@@ -25,7 +25,7 @@ export class AuthAction {
     const data = {...formData, email: formData.email.toLocaleLowerCase()};
     axiosInstance.post(`auth/sign-up/`, data)
       .then(({data}) => {
-        history.push('/final');
+        history.push('/date');
         this.updateToken(data && data.token);
       });
   }
@@ -45,4 +45,8 @@ export class AuthAction {
     });
   }
 
+  getHistory(params) {
+    axiosInstance.get(`auth/transactions/`, {params})
+      .then(({data}) => this.data = data);
+  }
 }

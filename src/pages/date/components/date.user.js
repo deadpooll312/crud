@@ -1,7 +1,7 @@
 import {inject, observer} from "mobx-react";
 import React from "react";
 
-export const DateUser = inject('store')(observer(({store, show, hidePopup}) => {
+export const DateUser = inject('store')(observer(({store}) => {
   const {auth} = store;
   return <div className="data-personal">
     <h3 className="title">Личные данные</h3>
