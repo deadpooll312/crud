@@ -58,10 +58,22 @@ export const MainPage = inject("store")(observer(({store}) => {
               <li><span className="circle"></span>Хочешь улететь за границу</li>
               <li><span className="circle"></span>Устал от карантина?</li>
             </ul>
-            <h4>Твой шанс воплотить свои мечты!</h4>
-            <div className="btn_wrapper">
-              <button className="btn btn-banner" onClick={scroll}>Угадай дату и забирай деньги</button>
+            {/*<h4>Твой шанс воплотить свои мечты!</h4>*/}
+
+            <div className="form_main-banner">
+              <form action="">
+                <input className="field_form" type="text" placeholder="ФИО"/>
+                <input className="field_form" type="text" placeholder="E-mail"/>
+                <input className="field_form" type="text" placeholder="Телефон"/>
+                <div className="btn-wrapper">
+                  <button className="btn btn-save">Сохранить</button>
+                </div>
+              </form>
             </div>
+
+            {/*<div className="btn_wrapper">*/}
+            {/*  <button className="btn btn-banner" onClick={scroll}>Угадай дату и забирай деньги</button>*/}
+            {/*</div>*/}
           </div>
         </div>
 
