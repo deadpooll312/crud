@@ -20,6 +20,7 @@ export const DateFill = inject('store')(observer(({store, show, hidePopup}) => {
       //   return setErrors({balance: balanceMultiple});
       // }
       store.auth.fill(`${balance}`);
+      hidePopup();
     }
   });
   
