@@ -36,7 +36,9 @@ export class AuthAction {
   }
 
   getUser() {
-    axiosInstance.get(`auth/me/`).then(({data}) => this.user = data);
+    if (localStorage.getItem(TOKEN)) {
+      axiosInstance.get(`auth/me/`).then(({data}) => this.user = data);
+    }
   }
   
   fill(balance) {

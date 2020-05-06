@@ -28,9 +28,9 @@ export const Date = inject("store")(observer(({store, props}) => {
       <div className="container">
         <div className="flex-wrapper">
           <div className="links-wrapper_header">
-            <a href="#" className="brand-link">BEFREE. BINGO</a>
-            <a href="#" className="link-item">Сделать ставку</a>
-            <a href="#" className="link-item">Правила</a>
+            <a href="#" className="brand-link" onClick={() => history.push('/')}>BEFREE. BINGO</a>
+            <a href="#" className="link-item" onClick={scroll}>Сделать ставку</a>
+            <a href="#" className="link-item" onClick={scroll}>Правила</a>
           </div>
         
           <div className="registration-wrapper_header">

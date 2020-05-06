@@ -16,35 +16,34 @@ export const DateHistory = inject('store')(observer(({store}) => {
   });
 
   return <div className="history-block">
-    <h3 className="title">История ставок count</h3>
-    <div className="history-inner">
+    <h3 className="title">История операций</h3>
+    {auth.data.results && auth.data.results.length ? <div className="history-inner">
       <div className="list_date">
-        {auth.data.results && auth.data.results.map((item, index) => {
+        {auth.data.results.map((item, index) => {
           return <div key={index} className="item_date">
             {
-            item.transaction_type === 'BET_TRANSACTION'
-              ? <p className="title_item">Ставка <b>{item.amount}</b> на <b>01.07.20</b></p>
-              : <p className="title_item">Пополнение баланса на <b>{item.amount}</b></p>
+              item.transaction_type === 'BET_TRANSACTION'
+                ? <p className="title_item">Ставка <b>{item.amount}</b> на <b>01.07.20</b></p>
+                : <p className="title_item">Пополнение баланса на <b>{item.amount}</b></p>
             }
             <span className="date_item">{item.created_at}</span>
           </div>
         })}
       </div>
       {auth.data.count > pageSize && <Pagination
-          activePage={activePage}
-          itemsCountPerPage={pageSize}
-          totalItemsCount={auth.data.count}
-          onChange={e => handlePageChange(e)}
-          itemClassFirst="to-first"
-          itemClassPrev="to-previous"
-          itemClassNext="to-next"
-          itemClassLast="to-last"
-        />}
+        activePage={activePage}
+        itemsCountPerPage={pageSize}
+        totalItemsCount={auth.data.count}
+        onChange={e => handlePageChange(e)}
+        itemClassFirst="to-first"
+        itemClassPrev="to-previous"
+        itemClassNext="to-next"
+        itemClassLast="to-last"
+      />}
     </div>
-
-    <div className="history-inner history-empty">
-      <h3>Здесь будет отображаться история ваших операций</h3>
-    </div>
-
+      : <div className="history-inner history-empty">
+        <h3>Здесь будет отображаться история ваших операций</h3>
+      </div>
+    }
   </div>
 }));

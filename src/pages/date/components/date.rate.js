@@ -82,6 +82,7 @@ export const DateRate = inject('store')(observer(({store}) => {
         {error && <i onClick={() => setError(null)} className="error">Сумма платежа введена не правильно</i>}
         <div className="btns_wrapper">
           <input
+            className="btn btn-date btn-input"
             type="number"
             onChange={e => setAmount(e.target.value)}
             placeholder="Введите сумму ставки"

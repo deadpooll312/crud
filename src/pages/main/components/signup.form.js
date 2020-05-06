@@ -5,7 +5,7 @@ export const SignupForm = ({formik, toggleModal}) => (
     <a onClick={() => toggleModal('login')}>Вход</a>
     <h1>Регистрация</h1>
     <div className="field_wrapper">
-      {formik.errors.full_name && <i>{formik.errors.full_name}</i>}
+      {formik.touched && formik.errors.full_name && <i>{formik.errors.full_name}</i>}
       <div className="input-wrapper">
         <input
           id="full_name"
@@ -16,7 +16,7 @@ export const SignupForm = ({formik, toggleModal}) => (
       </div>
     </div>
     <div className="field_wrapper">
-      {formik.errors.phone_number && <i>{formik.errors.phone_number}</i>}
+      {formik.touched && formik.errors.phone_number && <i>{formik.errors.phone_number}</i>}
       <div className="input-wrapper">
         <input
           id="phone_number"
@@ -27,7 +27,7 @@ export const SignupForm = ({formik, toggleModal}) => (
       </div>
     </div>
     <div className="field_wrapper">
-      {formik.errors.email && <i>{formik.errors.email}</i>}
+      {formik.touched && formik.errors.email && <i>{formik.errors.email}</i>}
       <div className="input-wrapper">
         <input
           id="email"
@@ -38,7 +38,7 @@ export const SignupForm = ({formik, toggleModal}) => (
       </div>
     </div>
     <div className="field_wrapper">
-      {formik.errors.password && <i>{formik.errors.password}</i>}
+      {formik.touched && formik.errors.password && <i>{formik.errors.password}</i>}
       <div className="input-wrapper">
         <input
           id="password"
@@ -46,6 +46,16 @@ export const SignupForm = ({formik, toggleModal}) => (
           className="field_form"
           type="password"
           placeholder="Пароль"/>
+      </div>
+    </div>
+    <div className="field_wrapper">
+      <div className="input-wrapper">
+        <input
+          id="promo_code"
+          onChange={formik.handleChange}
+          className="field_form"
+          type="text"
+          placeholder="Промо код"/>
       </div>
     </div>
     <p>Нажимая на кнопку «зарегистрироваться», вы атоматически соглашаетесь <a href="#">с политикой
