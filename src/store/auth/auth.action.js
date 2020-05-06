@@ -9,6 +9,7 @@ export class AuthAction {
   clearToken() {
     localStorage.removeItem(TOKEN);
     this.token = null;
+    this.user = {};
   }
 
   signIn(formData, history) {
@@ -40,7 +41,7 @@ export class AuthAction {
   
   fill(balance) {
     axiosInstance.post(`auth/balance/fill/`, {balance}).then(({data}) => {
-      window.open(data.data.url, '_blank');
+      window.open(data.url, '_blank');
     });
   }
 

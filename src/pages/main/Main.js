@@ -2,9 +2,10 @@ import React, {Fragment, useRef, useCallback, useState} from "react";
 import {inject, observer} from "mobx-react";
 import {useHistory} from "react-router";
 import {LoginPopup} from "./components/login.popup";
+import {SignUpPopup} from "./components/signup.popup";
 
 export const MainPage = inject("store")(observer(({store}) => {
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(null);
     const history = useHistory();
     const banner = useRef(null);
     const scrollToRef = (ref) => window.scrollTo({
@@ -15,27 +16,31 @@ export const MainPage = inject("store")(observer(({store}) => {
     const scroll = useCallback(() => {
       scrollToRef(banner);
     }, [banner]);
-    
+
     const push = useCallback((path) => {
       history.push(`/${path}`);
     }, [history]);
     
+    const toggleModal = useCallback(value => setShow(value), []);
+    
     return (
       <Fragment>
-        <LoginPopup show={show} toggleModal={() => setShow(false)}/>
+        <LoginPopup show={show === 'login'} toggleModal={toggleModal}/>
+        <SignUpPopup show={show === 'signup'} toggleModal={toggleModal} />
+
         <div className="header">
           <div className="container">
             <div className="flex-wrapper">
               <div className="links-wrapper_header">
                 <a href="#" className="brand-link">BEFREE. BINGO</a>
                 <a href="#" className="link-item" onClick={scroll}>Сделать ставку</a>
-                <a href="#" className="link-item">Правила</a>
+                <a href="#" className="link-item" onClick={scroll}>Правила</a>
               </div>
               
               <div className="registration-wrapper_header">
-                {store.auth.user.email ? <Fragment>
-                    <button className="btn btn-sing-in" onClick={() => push('account')}>Регистрация</button>
-                    <button className="btn btn-log-in" onClick={() => setShow(true)}>Вход</button>
+                {!store.auth.user.email ? <Fragment>
+                    <button className="btn btn-sing-in" onClick={() => setShow('signup')}>Регистрация</button>
+                    <button className="btn btn-log-in" onClick={() => setShow('login')}>Вход</button>
                   </Fragment>
                   : <button className="btn btn-log-in" onClick={() => push('date')}>Сделать ставку</button>}
               </div>

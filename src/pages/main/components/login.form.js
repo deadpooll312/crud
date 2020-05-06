@@ -1,11 +1,14 @@
 import React, {memo} from "react";
+import "./login.scss";
 
-export const LoginForm = memo(({ formik, toggleModal }) => {
+export const LoginForm = memo(({formik, toggleModal}) => {
   return (
-    <div className="login">
-      <form onSubmit={formik.handleSubmit}>
-        <div className="field_wrapper">
-          {formik.errors.email && <i>{formik.errors.email}</i>}
+    <form onSubmit={formik.handleSubmit}>
+      <a onClick={() => toggleModal('signup')}>Регистрация</a>
+      <h1>Вход</h1>
+      <div className="field_wrapper">
+        {formik.errors.email && <i>{formik.errors.email}</i>}
+        <div className="input-wrapper">
           <input
             id="email"
             onChange={formik.handleChange}
@@ -13,8 +16,10 @@ export const LoginForm = memo(({ formik, toggleModal }) => {
             type="text"
             placeholder="E-mail"/>
         </div>
-        <div className="field_wrapper">
-          {formik.errors.password && <i>{formik.errors.password}</i>}
+      </div>
+      <div className="field_wrapper">
+        {formik.errors.password && <i>{formik.errors.password}</i>}
+        <div className="input-wrapper">
           <input
             id="password"
             onChange={formik.handleChange}
@@ -22,11 +27,11 @@ export const LoginForm = memo(({ formik, toggleModal }) => {
             type="password"
             placeholder="Пароль"/>
         </div>
-        <div className="btn_wrapper">
-          <button className="btn btn-reg" type="submit">Вход</button>
-          <span onClick={toggleModal} className="btn btn-reg" type="submit">Отмена</span>
-        </div>
-      </form>
-    </div>
+      </div>
+      <div className="btn_wrapper">
+        <button className="btn btn-yellow" type="submit">Вход</button>
+        <span onClick={() => toggleModal()} className="btn btn-reg" type="submit">Отмена</span>
+      </div>
+    </form>
   );
 });

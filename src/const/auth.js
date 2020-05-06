@@ -4,5 +4,5 @@ export const passwordNotEqual = "Подтверждение пароля не с
 export const passwordMin = "Пароль не достаточно надеждный, минимум 4 символа"
 export const required = "Поле обязательно для заполнения";
 export const balanceInValid = "Введите правильный баланс";
-export const balanceMultiple = "Сумма должна быть кратна 10";
+export const balanceMultiple = "Сумма должна быть не менее 750";
 

@@ -1,7 +1,8 @@
 import * as Yup from "yup";
-import {emailNotValid, required, passwordMin, balanceInValid} from "../const/auth";
+import {emailNotValid, required, passwordMin, balanceInValid, balanceMultiple} from "../const/auth";
 
 export const signUpValidation = Yup.object().shape({
+  full_name: Yup.string().required(required),
   email: Yup.string().email(emailNotValid).required(required),
   password: Yup.string().min(4, passwordMin).required(required),
 });
@@ -12,5 +13,5 @@ export const loginValidation = Yup.object().shape({
 });
 
 export const balanceValidation = Yup.object().shape({
-  balance: Yup.number().moreThan(9, balanceInValid).required(balanceInValid),
+  balance: Yup.number().moreThan(749, balanceMultiple).required(balanceInValid),
 });

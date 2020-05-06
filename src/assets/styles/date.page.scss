@@ -8,6 +8,20 @@
   .flex-wrapper{
     justify-content: space-between;
   }
+
+  .error {
+    color: #fff;
+    text-align: center;
+    font-size: 17px;
+    cursor: pointer;
+    display: block;
+    background: $brand-color;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
   .title{
     margin-bottom: 30px;
     font-size: 32px;
@@ -284,6 +298,18 @@
     margin-top: 30px;
     display: flex;
     justify-content: center;
+    input {
+      width: 200px;
+      background: #002F56;
+      color: #fff;
+      font-size: 17px;
+      padding: 20px;
+      border: none;
+      border-radius: 10px;
+      &::placeholder {
+        //color: #eee;
+      }
+    }
     .btn-bet, .btn-date{
       width: 230px;
       height: 70px;
