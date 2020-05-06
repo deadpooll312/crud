@@ -5,7 +5,7 @@ import Pagination from "react-js-pagination";
 export const DateHistory = inject('store')(observer(({store}) => {
   const {auth} = store;
   const [activePage, setPage] = useState(1);
-  const pageSize = 5;
+  const pageSize = 3;
   
   useEffect(() => {
     auth.getHistory({page: activePage, pageSize});
@@ -35,7 +35,15 @@ export const DateHistory = inject('store')(observer(({store}) => {
           itemsCountPerPage={pageSize}
           totalItemsCount={auth.data.count}
           onChange={e => handlePageChange(e)}
+          itemClassFirst="to-first"
+          itemClassPrev="to-previous"
+          itemClassNext="to-next"
+          itemClassLast="to-last"
         />}
+    </div>
+
+    <div className="history-inner history-empty">
+      <h3>Здесь будет отображаться история ваших операций</h3>
     </div>
 
   </div>

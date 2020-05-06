@@ -1,0 +1,41 @@
+.reposes-banner{
+  position: relative;
+  height: calc(100vh);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  .center-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    text-align: center;
+  }
+  h3{
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+  }
+  .btn_reposes{
+    padding: 20px 90px;
+    background-color: $brand-color;
+    box-shadow: 0px 4px 16px #E39600;
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    &:hover{
+      background-color: #ffc427;
+    }
+  }
+}
+
+.failed-banner{
+  background-image: url(../images/final-banner.jpg)
+}
+
+.success-banner{
+  background-image: url(../images/car-image-success.jpg);
+}

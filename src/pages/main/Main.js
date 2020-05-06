@@ -37,6 +37,7 @@ export const MainPage = inject("store")(observer(({store}) => {
                 <a href="#" className="brand-link">BEFREE. BINGO</a>
                 <a href="#" className="link-item" onClick={scroll}>Сделать ставку</a>
                 <a href="#" className="link-item" onClick={scroll}>Правила</a>
+                <a href="#" className="link-item" >Реферальная программа</a>
               </div>
               
               <div className="registration-wrapper_header">
@@ -63,6 +64,115 @@ export const MainPage = inject("store")(observer(({store}) => {
             </div>
           </div>
         </div>
+
+        <div className="to-win_section">
+          <div className="container">
+            <h3 className="title_to-win">Чтобы выиграть</h3>
+            <div className="flex-wrapper">
+
+              <div className="item_to-win">
+                <div className="item-inner_block">
+                  <div className="img-wrapper">
+                    <svg width="84" height="92" viewBox="0 0 84 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g filter="url(#filter0_d)">
+                        <path d="M65.8675 21.7155L42.8987 12.1792C42.3233 11.9403 41.6766 11.9402 41.1013 12.1792L18.1325 21.7155C17.2577 22.0788 16.6875 22.9329 16.6875 23.8801V35.4729C16.6875 51.4353 26.3354 65.794 41.1143 71.8262C41.682 72.0579 42.3179 72.0579 42.8857 71.8262C57.6643 65.7941 67.3125 51.4355 67.3125 35.4729V23.8801C67.3125 22.9329 66.7424 22.0788 65.8675 21.7155ZM62.625 35.4729C62.625 49.0426 54.6562 61.5344 42 67.1105C29.682 61.6834 21.375 49.4103 21.375 35.4729V25.4448L42 16.8814L62.625 25.4448V35.4729ZM39.4095 43.373L49.4834 33.2992C50.3986 32.3839 51.8825 32.3838 52.7979 33.2992C53.7132 34.2145 53.7131 35.6985 52.7978 36.6137L41.0667 48.3448C40.1512 49.2602 38.6673 49.2599 37.7522 48.3448L31.2021 41.7947C30.2868 40.8793 30.2868 39.3954 31.2021 38.4801C32.1175 37.5649 33.6014 37.5648 34.5166 38.4801L39.4095 43.373Z" fill="#E39600"/>
+                      </g>
+                      <defs>
+                        <filter id="filter0_d" x="-4" y="0" width="92" height="92" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                          <feOffset dy="4"/>
+                          <feGaussianBlur stdDeviation="8"/>
+                          <feColorMatrix type="matrix" values="0 0 0 0 0.890196 0 0 0 0 0.588235 0 0 0 0 0 0 0 0 1 0"/>
+                          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                        </filter>
+                      </defs>
+                    </svg>
+                  </div>
+                  <h4>Lorem ipsum dolor</h4>
+                  <p>Твой выбор нельзя подделать или изменить!</p>
+                </div>
+              </div>
+
+              <div className="item_to-win">
+                <div className="item-inner_block">
+                  <div className="img-wrapper">
+                    <svg width="84" height="92" viewBox="0 0 84 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g filter="url(#filter0_d)">
+                        <path d="M65.8675 21.7155L42.8987 12.1792C42.3233 11.9403 41.6766 11.9402 41.1013 12.1792L18.1325 21.7155C17.2577 22.0788 16.6875 22.9329 16.6875 23.8801V35.4729C16.6875 51.4353 26.3354 65.794 41.1143 71.8262C41.682 72.0579 42.3179 72.0579 42.8857 71.8262C57.6643 65.7941 67.3125 51.4355 67.3125 35.4729V23.8801C67.3125 22.9329 66.7424 22.0788 65.8675 21.7155ZM62.625 35.4729C62.625 49.0426 54.6562 61.5344 42 67.1105C29.682 61.6834 21.375 49.4103 21.375 35.4729V25.4448L42 16.8814L62.625 25.4448V35.4729ZM39.4095 43.373L49.4834 33.2992C50.3986 32.3839 51.8825 32.3838 52.7979 33.2992C53.7132 34.2145 53.7131 35.6985 52.7978 36.6137L41.0667 48.3448C40.1512 49.2602 38.6673 49.2599 37.7522 48.3448L31.2021 41.7947C30.2868 40.8793 30.2868 39.3954 31.2021 38.4801C32.1175 37.5649 33.6014 37.5648 34.5166 38.4801L39.4095 43.373Z" fill="#E39600"/>
+                      </g>
+                      <defs>
+                        <filter id="filter0_d" x="-4" y="0" width="92" height="92" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                          <feOffset dy="4"/>
+                          <feGaussianBlur stdDeviation="8"/>
+                          <feColorMatrix type="matrix" values="0 0 0 0 0.890196 0 0 0 0 0.588235 0 0 0 0 0 0 0 0 1 0"/>
+                          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                        </filter>
+                      </defs>
+                    </svg>
+                  </div>
+                  <h4>Lorem ipsum dolor</h4>
+                  <p>Твой выбор нельзя подделать или изменить!</p>
+                </div>
+              </div>
+
+              <div className="item_to-win">
+                <div className="item-inner_block">
+                  <div className="img-wrapper">
+                    <svg width="84" height="92" viewBox="0 0 84 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g filter="url(#filter0_d)">
+                        <path d="M65.8675 21.7155L42.8987 12.1792C42.3233 11.9403 41.6766 11.9402 41.1013 12.1792L18.1325 21.7155C17.2577 22.0788 16.6875 22.9329 16.6875 23.8801V35.4729C16.6875 51.4353 26.3354 65.794 41.1143 71.8262C41.682 72.0579 42.3179 72.0579 42.8857 71.8262C57.6643 65.7941 67.3125 51.4355 67.3125 35.4729V23.8801C67.3125 22.9329 66.7424 22.0788 65.8675 21.7155ZM62.625 35.4729C62.625 49.0426 54.6562 61.5344 42 67.1105C29.682 61.6834 21.375 49.4103 21.375 35.4729V25.4448L42 16.8814L62.625 25.4448V35.4729ZM39.4095 43.373L49.4834 33.2992C50.3986 32.3839 51.8825 32.3838 52.7979 33.2992C53.7132 34.2145 53.7131 35.6985 52.7978 36.6137L41.0667 48.3448C40.1512 49.2602 38.6673 49.2599 37.7522 48.3448L31.2021 41.7947C30.2868 40.8793 30.2868 39.3954 31.2021 38.4801C32.1175 37.5649 33.6014 37.5648 34.5166 38.4801L39.4095 43.373Z" fill="#E39600"/>
+                      </g>
+                      <defs>
+                        <filter id="filter0_d" x="-4" y="0" width="92" height="92" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                          <feOffset dy="4"/>
+                          <feGaussianBlur stdDeviation="8"/>
+                          <feColorMatrix type="matrix" values="0 0 0 0 0.890196 0 0 0 0 0.588235 0 0 0 0 0 0 0 0 1 0"/>
+                          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                        </filter>
+                      </defs>
+                    </svg>
+                  </div>
+                  <h4>Lorem ipsum dolor</h4>
+                  <p>Твой выбор нельзя подделать или изменить!</p>
+                </div>
+              </div>
+
+              <div className="item_to-win">
+                <div className="item-inner_block">
+                  <div className="img-wrapper">
+                    <svg width="84" height="92" viewBox="0 0 84 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g filter="url(#filter0_d)">
+                        <path d="M65.8675 21.7155L42.8987 12.1792C42.3233 11.9403 41.6766 11.9402 41.1013 12.1792L18.1325 21.7155C17.2577 22.0788 16.6875 22.9329 16.6875 23.8801V35.4729C16.6875 51.4353 26.3354 65.794 41.1143 71.8262C41.682 72.0579 42.3179 72.0579 42.8857 71.8262C57.6643 65.7941 67.3125 51.4355 67.3125 35.4729V23.8801C67.3125 22.9329 66.7424 22.0788 65.8675 21.7155ZM62.625 35.4729C62.625 49.0426 54.6562 61.5344 42 67.1105C29.682 61.6834 21.375 49.4103 21.375 35.4729V25.4448L42 16.8814L62.625 25.4448V35.4729ZM39.4095 43.373L49.4834 33.2992C50.3986 32.3839 51.8825 32.3838 52.7979 33.2992C53.7132 34.2145 53.7131 35.6985 52.7978 36.6137L41.0667 48.3448C40.1512 49.2602 38.6673 49.2599 37.7522 48.3448L31.2021 41.7947C30.2868 40.8793 30.2868 39.3954 31.2021 38.4801C32.1175 37.5649 33.6014 37.5648 34.5166 38.4801L39.4095 43.373Z" fill="#E39600"/>
+                      </g>
+                      <defs>
+                        <filter id="filter0_d" x="-4" y="0" width="92" height="92" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                          <feOffset dy="4"/>
+                          <feGaussianBlur stdDeviation="8"/>
+                          <feColorMatrix type="matrix" values="0 0 0 0 0.890196 0 0 0 0 0.588235 0 0 0 0 0 0 0 0 1 0"/>
+                          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                        </filter>
+                      </defs>
+                    </svg>
+                  </div>
+                  <h4>Lorem ipsum dolor</h4>
+                  <p>Твой выбор нельзя подделать или изменить!</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
         
         <div className="regulations_section" ref={banner}>
           <div className="container container_custom">
@@ -72,7 +182,7 @@ export const MainPage = inject("store")(observer(({store}) => {
                 <h5>дает каждому возможность выйти с карантина РЕАЛЬНО ДРУГИМ ЧЕЛОВЕКОМ!</h5>
               </div>
               <div className="center-block item-regulations">
-                <h3>Правила <br/>конкурс <br/>просты</h3>
+                <h3>Правила <br/>конкурса <br/>просты</h3>
               </div>
               <div className="right-block item-regulations">
                 <ul>
@@ -87,7 +197,14 @@ export const MainPage = inject("store")(observer(({store}) => {
             </div>
           </div>
         </div>
-        
+
+        <div className="referral_section">
+          <div className="container container_medium">
+            <h3>реферальная программа</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </div>
+
         <div className="footer">
           <div className="container">
             <div className="brand_wrapper">

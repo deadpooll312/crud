@@ -8,20 +8,6 @@
   .flex-wrapper{
     justify-content: space-between;
   }
-
-  .error {
-    color: #fff;
-    text-align: center;
-    font-size: 17px;
-    cursor: pointer;
-    display: block;
-    background: $brand-color;
-    width: 80%;
-    margin: 0 auto;
-    padding: 10px;
-    border-radius: 5px;
-  }
-
   .title{
     margin-bottom: 30px;
     font-size: 32px;
@@ -110,13 +96,26 @@
       display: flex;
       justify-content: flex-start;
       padding-left: 30px;
-      li{
+      li {
         font-size: 14px;
         margin: 0 3px;
         transition: .3s;
         width: 30px;
         height: 30px;
-        a{
+        &.active {
+          background: #002F56;
+          border-radius: 8px;
+
+          a {
+            color: #fff;
+          }
+        }
+        &:hover {
+          a {
+            color: #fff;
+          }
+        }
+        a {
           display: block;
           height: 100%;
           color: #515151;
@@ -124,78 +123,69 @@
           text-align: center;
           transition: .3s;
         }
-        .arrow_pagination{
-          position: relative;
-          display: block;
-          width: 100%;
-          height: 100%;
-          color: #fff;
-          background: rgba(255, 255, 255, 0.04);
-          border-radius: 8px;
-          transition: .3s;
-          &:hover{
-            background: rgba(255, 255, 255, 0.09);
-          }
-          &:before, &:after{
-            position: absolute;
-            content: '';
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-repeat: no-repeat;
-            width: 8px;
-            height: 8px;
-          }
-          &.to-first{
-            margin-right: 4px;
-            &:before{
-              background-image: url(../images/arrow-prev-pagination.svg);
-            }
-            &:after{
-              left: calc(50% + 5px);
-              background-image: url(../images/arrow-prev-pagination.svg);
-            }
-          }
-          &.to-previous{
-            margin-right: 4px;
-            &:before{
-              background-image: url(../images/arrow-prev-pagination.svg);
-            }
-            &:after{
-              display: none;
-            }
-          }
-          &.to-next{
-            margin-left: 4px;
-            &:before{
-              background-image: url(../images/arrow-next-pagination.svg);
-            }
-            &:after{
-              display: none;
-            }
-          }
-          &.to-last{
-            margin-left: 4px;
-            &:before{
-              background-image: url(../images/arrow-next-pagination.svg);
-            }
-            &:after{
-              left: calc(50% + 5px);
-              background-image: url(../images/arrow-next-pagination.svg);
-            }
-          }
+      }
+      .to-first, .to-previous, .to-next, .to-last{
+        position: relative;
+        display: block;
+        width: 30px;
+        height: 30px;
+        font-size: 0;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 8px;
+        transition: .3s;
+        &:hover {
+          background: rgba(255, 255, 255, 0.09);
         }
-        &.active{
-          background: #002F56;
-          border-radius: 8px;
-          a{
-            color: #fff;
-          }
+        &:before, &:after {
+          position: absolute;
+          content: '';
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-repeat: no-repeat;
+          width: 6px;
+          height: 8px;
         }
-        &:hover{
-          a{
-            color: #fff;
-          }
+      }
+      .to-first{
+        margin-right: 4px;
+        &:before{
+          left: calc(50% + 2px);
+          background-image: url(../images/arrow-prev-pagination.svg);
+        }
+        &:after{
+          left: calc(50% - 2px);
+          background-image: url(../images/arrow-prev-pagination.svg);
+        }
+      }
+      .to-previous{
+        margin-right: 4px;
+        &:before{
+          background-image: url(../images/arrow-prev-pagination.svg);
+        }
+        &:after{
+          display: none;
+        }
+      }
+      .to-next{
+        margin-left: 4px;
+        &:before{
+          background-image: url(../images/arrow-next-pagination.svg);
+        }
+        &:after{
+          display: none;
+        }
+      }
+      .to-last{
+        margin-left: 4px;
+        &:before{
+          left: calc(50% - 2px);
+          background-image: url(../images/arrow-next-pagination.svg);
+        }
+        &:after{
+          left: calc(50% + 2px);
+          background-image: url(../images/arrow-next-pagination.svg);
         }
       }
     }
@@ -298,18 +288,6 @@
     margin-top: 30px;
     display: flex;
     justify-content: center;
-    input {
-      width: 200px;
-      background: #002F56;
-      color: #fff;
-      font-size: 17px;
-      padding: 20px;
-      border: none;
-      border-radius: 10px;
-      &::placeholder {
-        //color: #eee;
-      }
-    }
     .btn-bet, .btn-date{
       width: 230px;
       height: 70px;

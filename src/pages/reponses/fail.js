@@ -10,8 +10,12 @@ export const FailedPage = inject('store')(observer(({store}) => {
   }, [history]);
   
   return <Fragment>
-    <h1>Пополнение вашего счета не успешна!</h1>
-    <button onClick={home}>На главную</button>
+    <div className="failed-banner reposes-banner">
+      <div className="center-box">
+        <h3>Операция не прошла, повторите еще раз</h3>
+        <button className="btn btn_reposes" onClick={home}>Повторить операцию</button>
+      </div>
+    </div>
   </Fragment>
 }));
 
