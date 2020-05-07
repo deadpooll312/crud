@@ -67,7 +67,7 @@ export const DateRate = inject('store')(observer(({store}) => {
           <DateBalance/>
         </div>
       </div>
-      <div className="container container_small">
+      <div className="container container_small __drum-block">
         <div className="field-wrapper date-entry-block">
           {showSuccess && <h1 className="success">Вы сделали ставку поздравляем</h1>}
   

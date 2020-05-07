@@ -1,5 +1,5 @@
 .date-section{
-  padding: 110px 0;
+  padding: 160px 0 110px;
   min-height: 100vh;
   background-image: url(../images/date-banner-bg.jpg);
   background-repeat: no-repeat;
@@ -256,6 +256,31 @@
       }
     }
   }
+
+  .__drum-block{
+    position: relative;
+    .error{
+      position: absolute;
+      top: calc(100% + 20px);
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      display: block;
+      text-align: center;
+      background: #e64949;
+      padding: 15px 15px 15px 30px;
+      &:before{
+        position: absolute;
+        content: '';
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
   .field-wrapper{
     margin-top: 90px;
     padding: 30px 0;
@@ -312,8 +337,11 @@
     }
     .btn-input {
       text-align: center;
-      border: none;
+      border: 1px solid #fff;
       padding: 0 10px;
+      box-shadow: 0px 4px 16px #002F56;
+      cursor: text;
+      font-size: 18px;
     }
   }
 }
