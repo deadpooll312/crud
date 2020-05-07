@@ -72,11 +72,13 @@ export const DateRate = inject('store')(observer(({store}) => {
           {showSuccess && <h1 className="success">Вы сделали ставку поздравляем</h1>}
   
           <div className="date-entry-inner">
-            <InputMask
-              onChange={e => setValue(e.target.value)}
-              className="date-field"
-              mask="99/99/99"
-              value={dateValue}/>
+            <div className="date-field_wrapper">
+              <InputMask
+                onChange={e => setValue(e.target.value)}
+                className="date-field"
+                mask="99/99/99"
+                value={dateValue}/>
+            </div>
           </div>
         </div>
         {error && <i onClick={() => setError(null)} className="error">Сумма платежа введена не правильно</i>}

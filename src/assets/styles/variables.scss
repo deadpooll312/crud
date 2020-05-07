@@ -106,6 +106,7 @@ body{
 .btn{
   transition: .3s;
   font-weight: bold;
+  max-width: 400px;
   &:hover{
     cursor: pointer;
   }
