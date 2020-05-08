@@ -53,7 +53,7 @@ export const DateOld = inject("store")(observer(({store, props}) => {
           </div>
         </div>
       </div>
-      <div className="container container_medium">
+      <div className="container __medium">
         <div className="field-wrapper">
           <div className="field-inline-block">
             <input type="text" pattern="[0-9]*" maxLength="1" size="1" className="date-field"/>

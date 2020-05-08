@@ -1,5 +1,6 @@
 .date-section{
-  padding: 160px 0 110px;
+  padding-top: calc(50px + 6vh);
+  padding-bottom: 110px;
   min-height: 100vh;
   background-image: url(../images/date-banner-bg.jpg);
   background-repeat: no-repeat;
@@ -367,41 +368,47 @@
       outline: none;
       cursor: text;
       z-index: 3;
+      transition: .3s;
+      &:focus{
+        background: $second-color-hover;
+        box-shadow: 0px 6px 20px $second-color-hover;
+      }
     }
   }
   .btns_wrapper{
     margin-top: 30px;
     display: flex;
-    justify-content: center;
-    .btn-bet, .btn-date{
-      width: 230px;
-      height: 70px;
-      background: #002F56;
-      border: 1px solid #FFFFFF;
-      box-shadow: 0px 4px 16px #002F56;
+    justify-content: space-between;
+    .field_rate, .btn_rate{
+      padding: 20px 17px;
+    }
+    .field_rate{
+      width: calc(30% - 48px);
+      background-color: $dark-color;
+      border: 1px solid #fff;
       border-radius: 8px;
-      font-size: 16px;
+      font-size: 1.5rem;
       color: #fff;
-      margin: 0 15px;
-      &:hover{
-        background-color: #06477e;
+      transition: .3s;
+      &::-webkit-input-placeholder {
+        font-size: 16px;
       }
-      &.active{
-        border-color: transparent;
-        background: #FFB900;
-        box-shadow: 0px 4px 16px #FFB900;
-        &:hover{
-          background: #E39600;
-        }
+      &::-moz-placeholder {
+        font-size: 16px;
+      }
+      &:-ms-input-placeholder {
+        font-size: 16px;
+      }
+      &:-moz-placeholder {
+        font-size: 16px;
+      }
+      &:focus{
+        border-color: $brand-color;
+        box-shadow: 0px 4px 16px rgba(227, 150, 0, 0.5);
       }
     }
-    .btn-input {
-      text-align: center;
-      border: 1px solid #fff;
-      padding: 0 10px;
-      box-shadow: 0px 4px 16px #002F56;
-      cursor: text;
-      font-size: 18px;
+    .btn_rate{
+      width: calc(70% - 15px);
     }
   }
 }
@@ -409,9 +416,6 @@
 .personal-data-section{
   padding: 110px 0;
   background-color: #232323;
-  .flex-wrapper{
-
-  }
   .data-personal, .promocode-personal, .info-personal{
     width: 33%;
     padding: 0 15px;
@@ -499,42 +503,81 @@
       }
     }
   }
+}
 
-  .info-personal{
-    .info-item{
-      display: flex;
-      align-items: center;
-      margin-bottom: 30px;
-      &:nth-child(1){
-        .img-wrapper{
-          background-image: url(../images/info-shield-icon.svg);
-        }
-      }
-      &:nth-child(2){
-        .img-wrapper{
-          background-image: url(../images/info-person-icon.svg);
-        }
-      }
-      &:nth-child(3){
-        .img-wrapper{
-          background-image: url(../images/info-chain-icon.svg);
-        }
-      }
+.info-personal{
+  display: flex;
+  .info-item{
+    width: 33%;
+    display: flex;
+    align-items: center;
+    &:nth-child(1){
       .img-wrapper{
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position: center;
-        width: 80px;
-        height: 80px;
+        background-image: url(../images/info-shield-icon.svg);
       }
-      p{
-        width: calc(100% - 90px);
-        margin-left: 20px;
-        font-size: 16px;
-        line-height: 22px;
-        color: #fff;
+    }
+    &:nth-child(2){
+      .img-wrapper{
+        background-image: url(../images/info-person-icon.svg);
       }
+    }
+    &:nth-child(3){
+      .img-wrapper{
+        background-image: url(../images/info-chain-icon.svg);
+      }
+    }
+    .img-wrapper{
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      width: 80px;
+      height: 80px;
+    }
+    p{
+      width: calc(100% - 90px);
+      margin-left: 20px;
+      font-size: 1rem;
+      line-height: 1.25rem;
+      color: #fff;
+    }
+    a{
+      font-weight: 700;
+      color: #fff;
     }
   }
 }
 
+.important-info-block{
+  background-color: $second-color;
+  margin-bottom: 90px;
+  .important-info_inner{
+    padding: 30px 0;
+  }
+  .dropdown_important-info{
+    margin-top: 30px;
+  }
+  .title_important-info{
+    position: relative;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.5rem;
+    padding-right: 34px;
+    cursor: pointer;
+    &:hover{
+      &:before{
+        right: -5px;
+      }
+    }
+    &:before{
+      position: absolute;
+      content: '';
+      right: 0;
+      top: 48%;
+      transform: translateY(-50%) rotate(-90deg);
+      width: 20px;
+      height: 12px;
+      background: url(../images/arrow-info.svg) no-repeat;
+      transition: .3s;
+    }
+  }
+}

@@ -8,6 +8,7 @@ import {DateHistory} from "./date.history";
 import {DateBalance} from "./date.balance";
 import axiosInstance from "../../../api";
 import "./date.rate.scss";
+import {DateInfo} from "./date.info";
 
 export const DateRate = inject('store')(observer(({store}) => {
   const {auth} = store;
@@ -19,6 +20,7 @@ export const DateRate = inject('store')(observer(({store}) => {
   const [show, setShow] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [error, setError] = useState(null);
+  const [showInfo, setShowinfo] = useState(false);
   
   const showModal = useCallback(() => {
     if (!amount) {
@@ -61,13 +63,30 @@ export const DateRate = inject('store')(observer(({store}) => {
     </Dialog>
   
     <div className="date-section">
+
+      <div className="important-info-block">
+        <div className="important-info_inner">
+          <div className="container">
+            <a className="title_important-info" onClick={() => setShowinfo(true)}>ВАЖНАЯ ИНФОРМАЦИЯ</a>
+          </div>
+          {showInfo && <div className="dropdown_important-info">
+            <div className="container">
+              <div className="row">
+                <DateInfo />
+              </div>
+            </div>
+          </div>}
+        </div>
+      </div>
+
       <div className="container">
         <div className="flex-wrapper">
           <DateHistory/>
           <DateBalance/>
         </div>
       </div>
-      <div className="container container_small __drum-block">
+
+      <div className="container __small __drum-block">
         <div className="field-wrapper date-entry-block">
           {showSuccess && <h1 className="success">Вы сделали ставку поздравляем</h1>}
   
@@ -84,15 +103,17 @@ export const DateRate = inject('store')(observer(({store}) => {
         {error && <i onClick={() => setError(null)} className="error">Сумма платежа введена не правильно</i>}
         <div className="btns_wrapper">
           <input
-            className="btn btn-date btn-input"
+            className="field_rate"
             type="number"
             onChange={e => setAmount(e.target.value)}
             placeholder="Введите сумму ставки"
           />
-          <button onClick={showModal} className="btn btn-date active">Сделать ставку</button>
+          <button onClick={showModal} className="btn btn_rate __gold">Сделать ставку</button>
         </div>
       </div>
+
     </div>
+
   </Fragment>
 }));
 

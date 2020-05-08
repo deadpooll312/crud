@@ -1,3 +1,22 @@
+@media (min-width: 992px) and (max-width: 1200px) {
+
+  .container{
+    width: calc(90% - 30px) !important;
+  }
+
+  .header{
+    .links-wrapper_header{
+      .brand-link{
+        font-size: 1.5rem;
+      }
+      .link-item{
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+}
+
 @media (min-width: 768px) and (max-width: 991.98px) {
 
   html{
@@ -5,7 +24,7 @@
   }
 
   .container{
-    width: calc(100% - 30px);
+    width: calc(97% - 30px) !important;
   }
 
   .header{
@@ -69,34 +88,22 @@
     .flex-wrapper{
       flex-wrap: wrap;
       box-shadow: none;
+      justify-content: space-between;
       padding: 20px 15px;
     }
     .item-regulations{
-      width: 40%;
-      max-width: 380px;
+      width: calc(50% - 60px);
       margin: 0 15px 30px 15px;
       box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
       border-radius: 8px;
       background-color: #fff;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-    .left-block{
-      min-height: 310px;
-      &:before{
-        border-radius: 8px;
+      padding: 30px 15px;
+      &.__right-block{
+        width: 100%;
+        max-width: 100%;
       }
     }
-    .center-block{
-      min-height: 340px;
-    }
-    .right-block{
-      min-height: 100%;
-      width: 60%;
-      max-width: 60%;
-      padding-left: 30px;
-      padding-right: 30px;
-    }
+
   }
 
   .referral_section{
@@ -129,6 +136,7 @@
   }
 
   .date-section {
+    padding-top: 70px;
     .flex-wrapper{
       flex-wrap: wrap;
     }
@@ -175,17 +183,6 @@
         font-size: 3rem;
       }
     }
-    .btns_wrapper{
-      flex-wrap: wrap;
-      .btn-input{
-        margin-bottom: 30px;
-      }
-      .btn-date{
-        &.active{
-          width: 100%;
-        }
-      }
-    }
   }
 
   .personal-data-section{
@@ -219,6 +216,20 @@
     }
   }
 
+  .important-info-block{
+    .important-info_inner{
+      padding: 30px 15px;
+    }
+    .dropdown_important-info{
+      .info-personal{
+        flex-wrap: wrap;
+        .info-item{
+          width: 100%;
+        }
+      }
+    }
+  }
+
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -228,10 +239,12 @@
   }
 
   .container{
-    width: calc(100% - 30px);
+    width: calc(100% - 30px) !important;
   }
 
   .header{
+    padding-top: 23px;
+    padding-bottom: 23px;
     .links-wrapper_header{
       .brand-link{
         font-size: 1.5rem;
@@ -300,20 +313,7 @@
       box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
       border-radius: 8px;
       background-color: #fff;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-    .left-block{
-      min-height: 310px;
-      &:before{
-        border-radius: 8px;
-      }
-    }
-    .center-block{
-      min-height: 340px;
-    }
-    .right-block{
-      min-height: 100%;
+      padding: 30px 20px;
     }
   }
 
@@ -347,6 +347,7 @@
   }
 
   .date-section {
+    padding-top: 70px;
     .flex-wrapper{
       flex-wrap: wrap;
     }
@@ -388,13 +389,17 @@
     }
     .btns_wrapper{
       flex-wrap: wrap;
-      .btn-input{
-        margin-bottom: 30px;
+      justify-content: center;
+      flex-direction: column;
+      .field_rate{
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto 30px;
       }
-      .btn-date{
-        &.active{
-          width: 100%;
-        }
+      .btn_rate{
+        width: 100%;
+        max-width: 440px;
+        margin: 0 auto;
       }
     }
   }
@@ -423,6 +428,20 @@
     }
   }
 
+  .important-info-block{
+    .important-info_inner{
+      padding: 30px 15px;
+    }
+    .dropdown_important-info{
+      .info-personal{
+        flex-wrap: wrap;
+        .info-item{
+          width: 100%;
+        }
+      }
+    }
+  }
+
 }
 
 @media (min-width: 320px) and (max-width: 575.98px) {
@@ -432,10 +451,12 @@
   }
 
   .container{
-    width: calc(100% - 30px);
+    width: calc(100% - 30px) !important;
   }
 
   .header{
+    padding-top: 23px;
+    padding-bottom: 23px;
     .links-wrapper_header{
       .brand-link{
         font-size: 1.5rem;
@@ -504,20 +525,7 @@
       box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
       border-radius: 8px;
       background-color: #fff;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-    .left-block{
-      min-height: 310px;
-      &:before{
-        border-radius: 8px;
-      }
-    }
-    .center-block{
-      min-height: 340px;
-    }
-    .right-block{
-      min-height: 100%;
+      padding: 30px 20px;
     }
   }
 
@@ -551,6 +559,7 @@
   }
 
   .date-section {
+    padding-top: 70px;
     .flex-wrapper{
       flex-wrap: wrap;
     }
@@ -560,11 +569,25 @@
       .title{
         text-align: center;
       }
+      .list_date{
+        .item_date{
+          flex-wrap: wrap;
+          .title_item, .status_item, .hash_item, .date_item{
+            width: 100%;
+            text-align: left;
+            margin-bottom: 10px;
+          }
+          .date_item{
+            margin-bottom: 0;
+          }
+        }
+      }
     }
     .info-block{
       width: 100%;
       order: 1;
       text-align: center;
+      padding: 0;
     }
     .field-wrapper{
       margin-top: 70px;
@@ -594,13 +617,15 @@
     }
     .btns_wrapper{
       flex-wrap: wrap;
-      .btn-input{
+      justify-content: center;
+      .field_rate{
         margin-bottom: 30px;
+        width: 100%;
+        max-width: 200px;
       }
-      .btn-date{
-        &.active{
-          width: 100%;
-        }
+      .btn_rate{
+        width: 100%;
+        max-width: 440px;
       }
     }
   }
@@ -626,6 +651,20 @@
     }
     .info-personal{
       margin-bottom: 0;
+    }
+  }
+
+  .important-info-block{
+    .important-info_inner{
+      padding: 30px 15px;
+    }
+    .dropdown_important-info{
+      .info-personal{
+        flex-wrap: wrap;
+        .info-item{
+          width: 100%;
+        }
+      }
     }
   }
 
