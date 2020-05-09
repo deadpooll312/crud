@@ -43,7 +43,7 @@ export class AuthAction {
   
   fill(balance) {
     axiosInstance.post(`auth/balance/fill/`, {balance}).then(({data}) => {
-      window.open(data.url, '_blank');
+      window.open(data.payment_url, '_blank');
     });
   }
 
