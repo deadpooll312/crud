@@ -22,6 +22,33 @@ export const Header = inject("store")(
       store.auth.clearToken();
       history.push('/');
     }, []);
+    
+    
+    const login = () => {
+      return !store.auth.user.email ? (
+        <Fragment>
+          <button
+            className="btn btn-sing-in"
+            onClick={() => setShow("signup")}
+          >
+            Регистрация
+          </button>
+          <button
+            className="btn btn-log-in"
+            onClick={() => setShow("login")}
+          >
+            Вход
+          </button>
+        </Fragment>
+      ) : (
+        <button
+          className="btn btn-log-in"
+          onClick={signOut}
+        >
+          Выход
+        </button>
+      );
+    }
 
     return (
       <Fragment>
@@ -65,7 +92,7 @@ export const Header = inject("store")(
                       Реферальная программа
                     </a>
                   </li>
-                  <li>
+                  { !store.auth.user.email ? <Fragment><li>
                     <button
                       className="btn btn-sing-in"
                       onClick={() => setShow("signup")}
@@ -73,41 +100,27 @@ export const Header = inject("store")(
                       Регистрация
                     </button>
                   </li>
-                  <li>
+                    <li>
+                      <button
+                        className="btn btn-log-in"
+                        onClick={() => setShow("login")}
+                      >
+                        Вход
+                      </button>
+                    </li></Fragment> : <Fragment><li>
                     <button
                       className="btn btn-log-in"
-                      onClick={() => setShow("login")}
+                      onClick={signOut}
                     >
-                      Вход
+                      Выход
                     </button>
-                  </li>
+                  </li></Fragment> }
+                  
                 </ul>
               )}
 
               <div className="registration-wrapper_header">
-                {!store.auth.user.email ? (
-                  <Fragment>
-                    <button
-                      className="btn btn-sing-in"
-                      onClick={() => setShow("signup")}
-                    >
-                      Регистрация
-                    </button>
-                    <button
-                      className="btn btn-log-in"
-                      onClick={() => setShow("login")}
-                    >
-                      Вход
-                    </button>
-                  </Fragment>
-                ) : (
-                  <button
-                    className="btn btn-log-in"
-                    onClick={signOut}
-                  >
-                    Выход
-                  </button>
-                )}
+                {login()}
               </div>
             </div>
           </div>
