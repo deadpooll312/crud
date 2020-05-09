@@ -50,6 +50,11 @@ $dark-light-color: #323232;
 $brand-color-hover: #FF9800;
 $second-color-hover: #062a49;
 
+body{
+  font-family: $prox-regular;
+  margin: 0;
+}
+
 h1, h2, h3, h4, h5, h6, a, p, ul, li, button{
   margin: 0;
   padding: 0;
@@ -60,6 +65,7 @@ h1, h2, h3, h4, h5, h6, a, p, ul, li, button{
 
 a, button{
   transition: .3s;
+  cursor: pointer;
 }
 
 input{
@@ -70,10 +76,6 @@ ul{
   list-style-type: none;
 }
 
-body{
-  font-family: $prox-regular;
-  margin: 0;
-}
 
 .MuiContainer-root, .MuiContainer-maxWidthLg{
   max-width: 100%;
