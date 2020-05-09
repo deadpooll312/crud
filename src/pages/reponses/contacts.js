@@ -2,6 +2,7 @@ import React, {Fragment, useCallback} from 'react';
 import {inject, observer} from "mobx-react";
 import {useHistory} from "react-router";
 import { Header } from '../../components/header';
+import {Footer} from "../../components/footer";
 
 export const ContactsPage = inject('store')(observer(({store}) => {
   const history = useHistory();
@@ -20,6 +21,7 @@ export const ContactsPage = inject('store')(observer(({store}) => {
         <h6>Регистрационный номер: <b>147666</b></h6>
       </div>
     </div>
+    <Footer />
   </Fragment>
 }));
 

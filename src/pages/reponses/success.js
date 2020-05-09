@@ -2,6 +2,7 @@ import React, {Fragment, useCallback, useEffect} from 'react';
 import {inject, observer} from "mobx-react";
 import {useHistory} from "react-router";
 import { Header } from '../../components/header';
+import {Footer} from "../../components/footer";
 
 export const SuccessPage = inject('store')(observer(({store}) => {
   const history = useHistory();
@@ -22,5 +23,6 @@ export const SuccessPage = inject('store')(observer(({store}) => {
         <button className="btn btn_reposes" onClick={home}>На главную</button>
       </div>
     </div>
+    <Footer />
   </Fragment>
 }));

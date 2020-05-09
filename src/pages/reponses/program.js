@@ -2,6 +2,7 @@ import React, {Fragment, useCallback} from 'react';
 import {inject, observer} from "mobx-react";
 import {useHistory} from "react-router";
 import {Header} from '../../components/header';
+import {Footer} from "../../components/footer";
 
 export const ProgramPage = inject('store')(observer(({store}) => {
   const history = useHistory();
@@ -38,6 +39,7 @@ export const ProgramPage = inject('store')(observer(({store}) => {
         </p>
       </div>
     </div>
+    <Footer />
   </Fragment>
 }));
 

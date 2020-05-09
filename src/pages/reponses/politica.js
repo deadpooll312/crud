@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
 import {inject, observer} from "mobx-react";
 import {Header} from '../../components/header';
+import {Footer} from "../../components/footer";
 
 export const PoliticaPage = inject('store')(observer(({store}) => {
   return <Fragment>
@@ -454,5 +455,6 @@ export const PoliticaPage = inject('store')(observer(({store}) => {
 
       </div>
     </div>
+    <Footer />
   </Fragment>
 }));
