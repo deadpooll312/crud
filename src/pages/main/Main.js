@@ -1,75 +1,25 @@
-import React, {Fragment, useRef, useCallback, useState, useEffect} from "react";
+import React, {Fragment, useRef, useCallback, useEffect} from "react";
 import {inject, observer} from "mobx-react";
 import {useHistory} from "react-router";
-import {LoginPopup} from "./components/login.popup";
-import {SignUpPopup} from "./components/signup.popup";
+import { Header } from "../../components/header";
+import { Footer } from "../../components/footer";
 
 export const MainPage = inject("store")(observer(({store}) => {
-    const [show, setShow] = useState(null);
-    const [showMenu, setShowMenu] = useState(false);
     const history = useHistory();
     const banner = useRef(null);
     const programRef = useRef(null);
 
-    const scrollToRef = (ref) => window.scrollTo({
-      top: ref.current.offsetTop,
-      behavior: 'smooth',
-    });
-
     useEffect(() => store.auth.getUser(), [])
-    
-    const scroll = useCallback((value) => {
-      scrollToRef(value);
-    }, [banner, programRef]);
-    
-    const push = useCallback((path) => {
-      history.push(`/${path}`);
-    }, [history]);
-    
-    const toggleModal = useCallback(value => setShow(value), []);
   
     const getDate = useCallback(() => {
       if (store.auth.user.email) {
         history.push('/date');
-      } else {
-        setShow('signup');
       }
     }, []);
-    
+
     return (
       <Fragment>
-        <LoginPopup show={show === 'login'} toggleModal={toggleModal}/>
-        <SignUpPopup show={show === 'signup'} toggleModal={toggleModal}/>
-        
-        <div className="header">
-          <div className="container">
-            <div className="flex-wrapper">
-              <div className="links-wrapper_header">
-                <a href="#" className="brand-link">BEFREE. BINGO</a>
-                <a href="#" className="link-item" onClick={() => scroll(banner)}>Сделать ставку</a>
-                <a href="#" className="link-item" onClick={() => scroll(banner)}>Правила</a>
-                <a href="#" className="link-item" onClick={() => scroll(programRef)}>Реферальная программа</a>
-              </div>
-
-              <span className="burger-btn" onClick={() => setShowMenu(true)}><i></i></span>
-              {showMenu && <ul className="mobile-list">
-                <li><a href="#" className="link-item" onClick={() => scroll(banner)}>Сделать ставку</a></li>
-                <li><a href="#" className="link-item" onClick={() => scroll(banner)}>Правила</a></li>
-                <li><a href="#" className="link-item" onClick={() => scroll(programRef)}>Реферальная программа</a></li>
-                <li><button className="btn btn-sing-in" onClick={() => setShow('signup')}>Регистрация</button></li>
-                <li><button className="btn btn-log-in" onClick={() => setShow('login')}>Вход</button></li>
-              </ul>}
-              
-              <div className="registration-wrapper_header">
-                {!store.auth.user.email ? <Fragment>
-                    <button className="btn btn-sing-in" onClick={() => setShow('signup')}>Регистрация</button>
-                    <button className="btn btn-log-in" onClick={() => setShow('login')}>Вход</button>
-                  </Fragment>
-                  : <button className="btn btn-log-in" onClick={() => push('date')}>Сделать ставку</button>}
-              </div>
-            </div>
-          </div>
-        </div>
+        <Header />
         
         <div className="main-banner">
           <div className="container">
@@ -78,25 +28,12 @@ export const MainPage = inject("store")(observer(({store}) => {
               <li><span className="circle"></span>Устал от карантина?</li>
               <li><span className="circle"></span>Хочешь улететь за границу</li>
             </ul>
-            {/*<h4>Твой шанс воплотить свои мечты!</h4>*/}
-            
-            {/*<div className="form_main-banner">*/}
-            {/*  <form action="">*/}
-            {/*    <input className="field_form" type="text" placeholder="ФИО"/>*/}
-            {/*    <input className="field_form" type="text" placeholder="E-mail"/>*/}
-            {/*    <input className="field_form" type="text" placeholder="Телефон"/>*/}
-            {/*    <div className="btn-wrapper">*/}
-            {/*      <button className="btn btn-save">Сохранить</button>*/}
-            {/*    </div>*/}
-            {/*  </form>*/}
-            {/*</div>*/}
             
             <div className="btn_wrapper">
               <button className="btn btn-banner __gold" onClick={() => getDate()}>Угадай дату и забирай деньги</button>
             </div>
           </div>
         </div>
-        
         <div className="to-win_section">
           <div className="container">
             <h3 className="title-of-block __white">Чтобы выиграть</h3>
@@ -107,7 +44,7 @@ export const MainPage = inject("store")(observer(({store}) => {
                   <div className="img-wrapper">
                     <svg width="112" height="112" viewBox="0 0 112 112" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <g filter="url(#filter0_d)">
-                        <g clip-path="url(#clip0)">
+                        <g clipPath="url(#clip0)">
                           <path d="M92.3527 61.9487L94.6415 59.6604C96.0819 58.2194 96.0819 55.875 94.6415 54.434C93.9433 53.7364 93.0155 53.3518 92.028 53.3518C91.287 53.3518 90.579 53.5685 89.9772 53.972L89.495 52.3533L91.9724 49.8753C93.4135 48.4342 93.4135 46.0899 91.9724 44.6494C90.6461 43.3225 88.5551 43.2206 87.1067 44.3369L84.1709 34.481C85.3434 33.3518 86.4664 32.2532 87.5248 31.1948C90.5747 28.1443 93.0546 24.9161 94.5078 22.1036C96.9633 17.3502 95.9354 14.8093 94.6409 13.5148C93.3469 12.2202 90.806 11.193 86.052 13.6484C83.2401 15.1011 80.0114 17.5809 76.9614 20.6315C75.9031 21.6898 74.8038 22.8123 73.6753 23.9847L63.8187 21.0489C64.935 19.6012 64.8331 17.5101 63.5068 16.1832C62.0658 14.7428 59.7214 14.7422 58.281 16.1832L55.803 18.6612L54.1837 18.1791C54.5871 17.5766 54.8038 16.8686 54.8038 16.1277C54.8038 15.1407 54.4193 14.2124 53.7216 13.5148C52.2812 12.0737 49.9362 12.0737 48.4958 13.5148L46.2076 15.803L34.5444 12.3288C34.1287 12.2055 33.6795 12.3191 33.3737 12.6255L30.3714 15.6278C29.8673 16.1313 29.9338 16.9925 30.5087 17.4131L59.9363 38.953C53.3011 46.4341 46.9095 53.9244 42.3972 59.2759L33.7412 55.9465C33.306 55.7792 32.8134 55.8836 32.4838 56.2132L28.9255 59.7715C28.4653 60.2323 28.4653 60.9788 28.9255 61.439L46.7166 79.2302C47.1707 79.6849 47.93 79.6849 48.3847 79.2302L51.9425 75.6724C52.2721 75.3428 52.377 74.8497 52.2092 74.4145L48.8803 65.7591C54.2319 61.2468 61.7215 54.8551 69.2032 48.2194L71.5409 51.414C71.9559 51.981 72.7976 52.0542 73.3066 51.5708C73.7308 51.168 73.7894 50.4923 73.4446 50.0211L70.9733 46.6447C74.8856 43.1529 78.7491 39.6299 82.2544 36.3102L93.3659 73.6119L91.8333 75.1439L76.5616 54.2796C76.1771 53.7541 75.4392 53.6399 74.9137 54.0245C74.3876 54.4096 74.2734 55.1475 74.6586 55.673L90.7432 77.6475C91.1637 78.2225 92.0249 78.289 92.5285 77.7849L95.5308 74.7825C95.8372 74.4767 95.9507 74.0269 95.8274 73.6119L92.3527 61.9487ZM59.9491 17.8513C60.4642 17.3362 61.3242 17.3362 61.8393 17.8513C62.3606 18.3725 62.3606 19.2203 61.8393 19.7416L61.2864 20.2945L58.3731 19.4266L59.9491 17.8513ZM50.1639 15.1828C50.6845 14.6616 51.5329 14.6616 52.0542 15.1828C52.5754 15.7041 52.5754 16.5519 52.0542 17.0731L51.6904 17.4363L48.7778 16.569L50.1639 15.1828ZM33.0118 16.3224L34.5444 14.7904L71.8461 25.9012C68.5264 29.4071 65.0034 33.2706 61.511 37.183L33.0118 16.3224ZM33.6099 58.4233L40.7907 61.1851C38.9896 63.3299 37.6083 64.9894 36.7935 65.9715L31.4273 60.6053L33.6099 58.4233ZM38.4689 67.6469C42.5803 62.6866 64.3119 36.6166 78.6295 22.2989C81.4701 19.4578 84.5707 17.0688 87.1348 15.7444C89.0598 14.7495 91.6355 13.845 92.9734 15.1828C94.3113 16.5207 93.4062 19.0964 92.4119 21.0215C91.0874 23.5856 88.6979 26.6855 85.8567 29.5267C71.5403 43.8432 45.4697 65.5754 40.5094 69.6873L38.4689 67.6469ZM49.733 74.5463L47.551 76.7283L42.1848 71.3621C43.1662 70.5479 44.8264 69.1667 46.9712 67.3655L49.733 74.5463ZM91.0831 56.1021C91.6044 55.5809 92.4522 55.5809 92.9734 56.1021C93.4947 56.6233 93.4947 57.4711 92.9734 57.9924L91.5873 59.3785L90.7194 56.4659L91.0831 56.1021ZM88.4147 46.3169C88.9353 45.7957 89.7837 45.7963 90.3049 46.3169C90.8201 46.8321 90.8201 47.692 90.3049 48.2072L88.729 49.7831L87.8611 46.8699L88.4147 46.3169Z" fill="#E39600"/>
                           <path d="M86.7941 80.079L76.73 90.1431C76.301 90.5728 76.2723 91.282 76.6672 91.7435C77.1085 92.2586 77.9184 92.2909 78.3981 91.8112L88.4622 81.7471C88.9231 81.2863 88.9231 80.5399 88.4622 80.079C88.002 79.6188 87.255 79.6188 86.7941 80.079Z" fill="#E39600"/>
                           <path d="M83.4298 76.7145C83.8906 76.2543 83.8906 75.5072 83.4298 75.047C82.9696 74.5862 82.2225 74.5862 81.7623 75.047L75.472 81.3367C75.0429 81.7664 75.0142 82.4756 75.4091 82.9371C75.8504 83.4522 76.6604 83.4845 77.1401 83.0048L83.4298 76.7145Z" fill="#E39600"/>
@@ -118,8 +55,8 @@ export const MainPage = inject("store")(observer(({store}) => {
                         </g>
                       </g>
                       <defs>
-                        <filter id="filter0_d" x="0" y="0" width="112" height="112" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <filter id="filter0_d" x="0" y="0" width="112" height="112" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
                           <feOffset dy="4"/>
                           <feGaussianBlur stdDeviation="8"/>
@@ -143,7 +80,7 @@ export const MainPage = inject("store")(observer(({store}) => {
                   <div className="img-wrapper">
                     <svg width="144" height="112" viewBox="0 0 112 92" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <g filter="url(#filter0_d)">
-                        <g clip-path="url(#clip0)">
+                        <g clipPath="url(#clip0)">
                           <path d="M36.6458 37.5103H23.748V40.0929H36.6458V37.5103Z" fill="#E39600"/>
                           <path d="M43.1025 45.2583H23.748V47.841H43.1025V45.2583Z" fill="#E39600"/>
                           <path d="M70.2051 53.0063H23.748V55.589H70.2051V53.0063Z" fill="#E39600"/>
@@ -155,8 +92,8 @@ export const MainPage = inject("store")(observer(({store}) => {
                         </g>
                       </g>
                       <defs>
-                        <filter id="filter0_d" x="0" y="-10" width="112" height="112" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <filter id="filter0_d" x="0" y="-10" width="112" height="112" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
                           <feOffset dy="4"/>
                           <feGaussianBlur stdDeviation="8"/>
@@ -180,7 +117,7 @@ export const MainPage = inject("store")(observer(({store}) => {
                   <div className="img-wrapper">
                     <svg width="120" height="120" viewBox="0 0 112 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <g filter="url(#filter0_d)">
-                        <g clip-path="url(#clip0)">
+                        <g clipPath="url(#clip0)">
                           <path d="M95.8458 54.6954C95.1275 47.4706 91.8998 40.6594 86.7569 35.5164C82.3618 31.1215 76.9824 28.2972 71.322 27.0414V23.0713C73.6339 22.4962 75.3523 20.4035 75.3523 17.9161C75.3523 14.9867 72.9692 12.6035 70.0398 12.6035H58.7896C55.8602 12.6035 53.477 14.9867 53.477 17.9161C53.477 20.4033 55.1955 22.496 57.5072 23.0713V27.0525C51.8642 28.3136 46.5025 31.134 42.1199 35.5165C41.1609 36.4756 40.2765 37.4817 39.4669 38.5274C39.4277 38.5244 39.3885 38.5214 39.3485 38.5214H28.2138C27.351 38.5214 26.6513 39.221 26.6513 40.0839C26.6513 40.9469 27.351 41.6465 28.2138 41.6465H37.3408C36.1952 43.5645 35.2714 45.5787 34.5683 47.6522H17.5625C16.6997 47.6522 16 48.3517 16 49.2147C16 50.0777 16.6997 50.7772 17.5625 50.7772H33.6853C33.235 52.754 32.9765 54.7657 32.9098 56.7831H26.0002C25.1373 56.7831 24.4376 57.4827 24.4376 58.3456C24.4376 59.2086 25.1373 59.9082 26.0002 59.9082H32.9596C33.0915 61.9307 33.4167 63.9426 33.9353 65.914H23.8126C22.9498 65.914 22.2501 66.6136 22.2501 67.4766C22.2501 68.3395 22.9498 69.0391 23.8126 69.0391H34.9325C36.4653 73.094 38.8608 76.8945 42.1199 80.1536C47.2678 85.3015 54.0861 88.53 61.3184 89.2446C62.3506 89.3464 63.3836 89.3969 64.4151 89.3969C70.5124 89.3969 76.5322 87.6323 81.6401 84.306C82.3632 83.8351 82.5678 82.8671 82.0968 82.144C81.6259 81.4208 80.6579 81.2163 79.9347 81.6872C68.7538 88.9681 53.7797 87.3939 44.3297 77.9439C33.2417 66.8559 33.2417 48.8146 44.3297 37.7264C55.4175 26.6386 73.4589 26.6386 84.547 37.7264C93.9845 47.1641 95.5673 62.1254 88.3105 73.3009C87.8405 74.0246 88.0463 74.9925 88.7699 75.4623C89.494 75.9323 90.4615 75.7265 90.9313 75.0028C94.8086 69.0316 96.5539 61.8198 95.8458 54.6954ZM56.602 17.9163C56.602 16.71 57.5833 15.7287 58.7896 15.7287H70.0398C71.246 15.7287 72.2273 16.71 72.2273 17.9163C72.2273 19.1225 71.246 20.1038 70.0398 20.1038H69.7594H59.0697H58.7896C57.5833 20.1038 56.602 19.1224 56.602 17.9163ZM60.6323 26.5153V23.2288H68.1969V26.5097C65.685 26.2109 63.1437 26.2128 60.6323 26.5153Z" fill="#E39600"/>
                           <path d="M85.6526 77.4854C85.2401 77.4854 84.8385 77.6525 84.5481 77.9432C84.2559 78.2338 84.0901 78.6369 84.0901 79.0479C84.0901 79.4588 84.2559 79.8619 84.5481 80.1525C84.8385 80.4447 85.2402 80.6104 85.6526 80.6104C86.0635 80.6104 86.4651 80.4447 86.7573 80.1525C87.0479 79.8619 87.2151 79.4588 87.2151 79.0479C87.2151 78.6369 87.0481 78.2338 86.7573 77.9432C86.4651 77.6525 86.0634 77.4854 85.6526 77.4854Z" fill="#E39600"/>
                           <path d="M64.4383 33.5955C51.0727 33.5955 40.199 44.4691 40.199 57.8347C40.199 71.2004 51.0727 82.074 64.4383 82.074C77.8038 82.074 88.6775 71.2004 88.6775 57.8347C88.6775 44.4691 77.8038 33.5955 64.4383 33.5955ZM64.4383 78.949C52.7957 78.949 43.324 69.4771 43.324 57.8347C43.324 46.1924 52.7957 36.7205 64.4383 36.7205C76.0808 36.7205 85.5525 46.1924 85.5525 57.8347C85.5525 69.4771 76.0808 78.949 64.4383 78.949Z" fill="#E39600"/>
@@ -193,8 +130,8 @@ export const MainPage = inject("store")(observer(({store}) => {
                         </g>
                       </g>
                       <defs>
-                        <filter id="filter0_d" x="0" y="-1" width="112" height="112" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <filter id="filter0_d" x="0" y="-1" width="112" height="112" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
                           <feOffset dy="4"/>
                           <feGaussianBlur stdDeviation="8"/>
@@ -252,21 +189,8 @@ export const MainPage = inject("store")(observer(({store}) => {
             </div>
           </div>
         </div>
-        
-        <div className="footer">
-          <div className="container">
-            <div className="brand_wrapper">
-              <a href="#" className="brand-link">BEFREE. BINGO</a>
-            </div>
-            <div className="flex-wrapper">
-              <a href="#">Условия и положения</a>
-              <a href="#">Политика конфиденциальности</a>
-              <a href="#">Контакты</a>
-              <a href="#">Блокчейн</a>
-              <a href="#">Правила</a>
-            </div>
-          </div>
-        </div>
+
+        <Footer />
       </Fragment>
     );
   })
