@@ -318,6 +318,12 @@
   }
 
   .referral_section{
+    .flex-wrapper{
+      flex-wrap: wrap;
+    }
+    .item-referral_wrapper{
+      width: 100%;
+    }
     h3{
       font-size: 2rem;
       line-height: 40px;
@@ -325,6 +331,23 @@
     p{
       font-size: 1.25rem;
       line-height: 30px;
+    }
+  }
+
+  .secondary-page_block{
+    .flex-wrapper{
+      flex-wrap: wrap;
+      .item-referral_wrapper{
+        width: 100%;
+      }
+      h3{
+        font-size: 2rem;
+        line-height: 40px;
+      }
+      p{
+        font-size: 1.25rem;
+        line-height: 30px;
+      }
     }
   }
 
@@ -491,6 +514,11 @@
         font-size: 1.5rem;
       }
     }
+    .btn-banner{
+      font-size: 16px;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
   }
 
   .to-win_section{
@@ -529,7 +557,15 @@
     }
   }
 
+
+
   .referral_section{
+    .flex-wrapper{
+      flex-wrap: wrap;
+    }
+    .item-referral_wrapper{
+      width: 100%;
+    }
     h3{
       font-size: 2rem;
       line-height: 40px;
@@ -537,6 +573,23 @@
     p{
       font-size: 1.25rem;
       line-height: 30px;
+    }
+  }
+
+  .secondary-page_block{
+    .flex-wrapper{
+      flex-wrap: wrap;
+      .item-referral_wrapper{
+        width: 100%;
+      }
+      h3{
+        font-size: 2rem;
+        line-height: 40px;
+      }
+      p{
+        font-size: 1.25rem;
+        line-height: 30px;
+      }
     }
   }
 
