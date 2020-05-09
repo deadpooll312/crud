@@ -12,9 +12,12 @@ export const ContactsPage = inject('store')(observer(({store}) => {
   
   return <Fragment>
     <Header />
-    <div className="failed-banner reposes-banner">
-      <div className="center-box">
-        <h3>Контакты</h3>
+    <div className="secondary-page_block">
+      <div className="container __medium">
+        <h2>КОНТАКТЫ</h2>
+        <h6>Игра зарегистрирована в законодательном поле Кюрасао</h6>
+        <h6>Государственный регистрационный адрес: <b>Heelsumstraat 51, E-Commerce Park, Curaçao</b></h6>
+        <h6>Регистрационный номер: <b>147666</b></h6>
       </div>
     </div>
   </Fragment>
