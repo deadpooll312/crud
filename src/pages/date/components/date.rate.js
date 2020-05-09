@@ -8,6 +8,7 @@ import { DateHistory } from "./date.history";
 import { DateBalance } from "./date.balance";
 import axiosInstance from "../../../api";
 import "./date.rate.scss";
+import {DateInfo} from "./date.info";
 
 export const DateRate = inject("store")(
   observer(({ store }) => {
@@ -20,6 +21,7 @@ export const DateRate = inject("store")(
     const [show, setShow] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
     const [error, setError] = useState(null);
+    const [showInfo, setInfo] = useState(false);
 
     const showModal = useCallback(() => {
       if (parseInt(auth.user.balance) < amount) {
@@ -65,6 +67,21 @@ export const DateRate = inject("store")(
         </Dialog>
 
         <div className="date-section">
+          <div className="important-info-block">
+            <div className="important-info_inner">
+              <div className="container">
+                <a className="title_important-info" onClick={() => setInfo(!showInfo)}>ВАЖНАЯ ИНФОРМАЦИЯ</a>
+              </div>
+              {showInfo && <div className="dropdown_important-info">
+                <div className="container">
+                  <div className="row">
+                    <DateInfo />
+                  </div>
+                </div>
+              </div>}
+            </div>
+          </div>
+
           <div className="container">
             <div className="flex-wrapper">
               <DateHistory />
