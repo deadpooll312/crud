@@ -1,10 +1,11 @@
-import React, {Fragment, useRef, useCallback, useEffect} from "react";
+import React, {Fragment, useRef, useCallback, useEffect, useState} from "react";
 import {inject, observer} from "mobx-react";
 import {useHistory} from "react-router";
 import { Header } from "../../components/header";
 import { Footer } from "../../components/footer";
 
 export const MainPage = inject("store")(observer(({store}) => {
+    const [show, setShow] = useState(false);
     const history = useHistory();
     const banner = useRef(null);
     const programRef = useRef(null);
@@ -14,6 +15,9 @@ export const MainPage = inject("store")(observer(({store}) => {
     const getDate = useCallback(() => {
       if (store.auth.user.email) {
         history.push('/date');
+      } else {
+        setShow(true);
+        setTimeout(() => setShow(false),3000);
       }
     }, []);
 
@@ -28,6 +32,10 @@ export const MainPage = inject("store")(observer(({store}) => {
               <li><span className="circle"></span>Устал от карантина?</li>
               <li><span className="circle"></span>Хочешь улететь за границу</li>
             </ul>
+            {show && <div className="information-tooltip" onClick={() => setShow(false)}>
+              <div className="close-icon">x</div>
+              <p><span>i</span> Для этого вам необходимо авторизоваться</p>
+            </div>}
             
             <div className="btn_wrapper">
               <button className="btn btn-banner __gold" onClick={() => getDate()}>Угадай дату и забирай деньги</button>
