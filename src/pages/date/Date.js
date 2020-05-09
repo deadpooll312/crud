@@ -25,11 +25,6 @@ export const Date = inject("store")(observer(({store, props}) => {
         </div>
       </div>
     </div>
-
-    {/*<div className="information-tooltip">*/}
-    {/*  <div className="close-icon">x</div>*/}
-    {/*  <p><span>i</span> Для этого вам необходимо пополнить баланс</p>*/}
-    {/*</div>*/}
     
     <div className="pour-in_modal-wrapper delete-class">
       <div className="pour-in_modal">
