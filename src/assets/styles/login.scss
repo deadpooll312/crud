@@ -1,36 +1,105 @@
-.login {
+.modal-form_wrapper {
+  background: #232323;
+  padding: 30px 20px !important;
+  .modal{
 
-  h2 {
-    font-size: 18px;
-    font-family: $bold;
-    margin-bottom: 30px;
+    &.__head{
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      h3{
+        width: 100%;
+        font-size: 1.825rem;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .link_modal-head{
+        font-size: 0.875rem;
+        color: #E39600;
+        text-decoration: underline;
+      }
+      .close_modal-head{
+        position: absolute;
+        bottom: 105%;
+        left: 101%;
+        font-size: 0;
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+        &:before, &:after{
+          position: absolute;
+          content: '';
+          width: 22px;
+          height: 3px;
+          background-color: #fff;
+        }
+        &:before{
+          transform: rotate(-45deg);
+        }
+        &:after{
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    &.__body{
+      margin-bottom: 30px;
+      text-align: center;
+      h4{
+        font-size: 1.5rem;
+        color: #fff;
+        font-weight: 400;
+        margin-bottom: 15px;
+        border: 1px solid #fff;
+        border-radius: 8px;
+        padding: 15px;
+        b{
+          font-family: $prox-semibold;
+        }
+      }
+    }
   }
-
-  div {
-    display: block;
-  }
-
-  .input-wrapper {
-    margin-bottom: 15px;
-  }
-
-  .title {
+  
+  .btn_wrapper{
     display: flex;
-    justify-content: space-between;
-
-    span {
-      padding-top: 15px;
-      font-size: 14px;
-      color: $blue;
-      display: block;
-      cursor: pointer;
-      text-decoration: underline;
+    justify-content: center;
+    .btn-log-in{
+      min-width: 200px;
     }
   }
 
   p {
-    font-size: 12px;
+    color: #fff;
     text-align: center;
+    margin: 25px 0;
+    padding: 0;
+  }
+
+  .input-wrapper {
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    margin-bottom: 20px;
+  }
+
+  i {
+    color: red;
+    padding-left: 10px;
+    font-size: 12px;
+  }
+
+  input {
+    display: block;
+    border: none;
+    font-size: 17px;
+    color: #fff;
+    background: transparent;
+    width: 100%;
+    padding: 10px;
+    background: transparent;
   }
 
 }

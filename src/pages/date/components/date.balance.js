@@ -29,6 +29,7 @@ export const DateBalance = inject('store')(observer(({store}) => {
           className="btn btn-pour-in">Пополнить баланс</button>
         <button className="btn btn-bring-out" onClick={withdraw}>Вывести средства</button>
       </div>
+      <h6>Вывод средств станет возможен в течение 24 часов с момента завершения конкурса.</h6>
     </div>
   </Fragment>
 }));

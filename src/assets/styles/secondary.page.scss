@@ -44,6 +44,7 @@
     font-size: 1.125rem;
     color: #fff;
     margin-bottom: 1.875rem;
+    font-weight: 400;
     a {
       color: $brand-color;
       &:hover {
@@ -82,6 +83,7 @@
   }
 
   .item-referral_wrapper {
+    width: 50%;
     padding: 0 15px;
     margin-bottom: 20px;
     p {

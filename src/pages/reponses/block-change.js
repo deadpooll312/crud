@@ -17,7 +17,7 @@ export const BlockChangePage = inject('store')(observer(({store}) => {
       <div className="container __medium">
         <h2>БЛОКЧЕЙН</h2>
         <p>
-          Все выполненные ставки выполняются за счет стеблкоина <a href="#"><b>BingoBet</b></a> и попадают в хеш
+          Все выполненные ставки выполняются за счет стейблкоина <a href="#"><b>BingoBet</b></a> и попадают в хеш
           блокчейна. Один рубль равен
           одной монете BingoBet и не подвержен инфляции.
         </p>

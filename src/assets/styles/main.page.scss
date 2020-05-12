@@ -93,8 +93,8 @@
   h1{
     padding-top: 22vh;
     margin-bottom: 8vh;
-    font-size: 3.75rem;
-    line-height: 70px;
+    font-size: 3rem;
+    line-height: 63px;
     font-family: ProximaNova-Bold;
     color: #fff;
     text-transform: uppercase;
@@ -238,6 +238,7 @@
     }
     h4{
       position: relative;
+      min-height: 80px;
       margin-bottom: 30px;
       font-size: 2rem;
       color: #fff;

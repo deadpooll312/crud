@@ -51,17 +51,19 @@ export const DateRate = inject("store")(
     return (
       <Fragment>
         <Dialog maxWidth="xs" fullWidth={true} open={show}>
-          <DialogContent className="login">
-            <h1>Ваша ставка:</h1>
-            <p>Сумма: {amount}</p>
-            <p>Дата: {dateValue}</p>
+          <DialogContent className="modal-form_wrapper">
+            <div className="modal __head">
+              <span onClick={() => setShow(false)} className="close_modal-head">x</span>
+              <h3>Ваша ставка:</h3>
+            </div>
+            <div className="modal __body">
+              <h4>Сумма: <b>{amount}</b></h4>
+              <h4>Дата: <b>{dateValue}</b></h4>
+            </div>
             <div className="btn_wrapper">
-              <button className="btn btn-yellow" onClick={submit}>
+              <button className="btn btn-log-in __gold" onClick={submit}>
                 Подтвердить
               </button>
-              <span onClick={() => setShow(false)} className="btn btn-reg">
-                Отмена
-              </span>
             </div>
           </DialogContent>
         </Dialog>

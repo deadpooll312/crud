@@ -318,6 +318,9 @@
       border-radius: 8px;
       background-color: #fff;
       padding: 30px 20px;
+      h4{
+        min-height: auto;
+      }
     }
   }
 
@@ -384,6 +387,9 @@
       padding: 0;
       .title{
         text-align: center;
+      }
+      .list_date{
+        padding: 15px;
       }
     }
     .info-block{
@@ -562,6 +568,9 @@
       border-radius: 8px;
       background-color: #fff;
       padding: 30px 20px;
+      h4{
+        min-height: auto;
+      }
     }
   }
 
@@ -631,11 +640,13 @@
     }
     .history-block{
       width: 100%;
+      padding: 0;
       order: 2;
       .title{
         text-align: center;
       }
       .list_date{
+        padding: 15px;
         .item_date{
           flex-wrap: wrap;
           .title_item, .status_item, .hash_item, .date_item{
@@ -647,6 +658,11 @@
             margin-bottom: 0;
           }
         }
+      }
+      .pagination{
+        padding: 5px 10px 0 10px;
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
     .info-block{
