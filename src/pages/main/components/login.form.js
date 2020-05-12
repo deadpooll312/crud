@@ -5,6 +5,7 @@ export const LoginForm = memo(({formik, toggleModal}) => {
   return (
     <form onSubmit={formik.handleSubmit}>
       <div className="modal __head">
+        <span onClick={() => toggleModal()} className="close_modal-head" type="submit">x</span>
         <h3>Вход</h3>
         <a className="link_modal-head" onClick={() => toggleModal('signup')}>Регистрация</a>
       </div>
@@ -31,10 +32,9 @@ export const LoginForm = memo(({formik, toggleModal}) => {
               placeholder="Пароль"/>
           </div>
         </div>
-      </div>
-      <div className="btn_wrapper">
-        <button className="btn btn-yellow" type="submit">Вход</button>
-        <span onClick={() => toggleModal()} className="btn btn-reg" type="submit">Отмена</span>
+        <div className="btn_wrapper">
+          <button className="btn btn-log-in __gold" type="submit">Вход</button>
+        </div>
       </div>
     </form>
   );
