@@ -1,26 +1,33 @@
-.login {
-  background: #232323;
 
-  h1 {
-    color: #fff;
-    text-align: center;
-    margin-bottom: 20px;
+.modal-form_wrapper {
+  background: #232323;
+  .modal{
+
+    &.__head{
+      display: flex;
+      justify-content: space-between;
+      h3 {
+        font-size: 1.25rem;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .link_modal-head{
+        font-size: 0.875rem;
+        color: #E39600;
+        text-decoration: underline;
+      }
+    }
+    &.__body{
+
+    }
   }
+
+
 
   p {
     color: #fff;
     text-align: center;
-    a {
-      display: inline-block;
-    }
-  }
-
-  a {
-    color: #e39600;
-    font-size: 12px;
-    cursor: pointer;
-    display: block;
-    text-align: right;
   }
 
   .input-wrapper {
@@ -72,4 +79,5 @@
     border: none;
     background: #E39600;
   }
+
 }

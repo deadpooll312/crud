@@ -26,7 +26,7 @@ export const SignUpPopup = inject("store")(observer(({store, show, toggleModal})
       fullWidth={true}
       open={show}
     >
-      <DialogContent className="login">
+      <DialogContent className="login modal-form_wrapper">
         <SignupForm toggleModal={toggleModal} formik={formik}/>
       </DialogContent>
     </Dialog>

@@ -3,7 +3,7 @@ import React from "react";
 export const SignupForm = ({formik, toggleModal}) => (
   <form onSubmit={formik.handleSubmit}>
     <a onClick={() => toggleModal('login')}>Вход</a>
-    <h1>Регистрация</h1>
+    <h3>Регистрация</h3>
     <div className="field_wrapper">
       {formik.touched && formik.errors.full_name && <i>{formik.errors.full_name}</i>}
       <div className="input-wrapper">
