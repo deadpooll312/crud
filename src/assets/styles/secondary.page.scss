@@ -1,0 +1,100 @@
+.secondary-page_block {
+  background-color: $dark-light-color;
+  padding: 160px 0 90px 0;
+  min-height: calc(100vh - 240px);
+  h2 {
+    margin-bottom: 60px;
+    font-size: 3.125rem;
+    color: $brand-color;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $prox-bold;
+    &.__white {
+      color: #fff;
+    }
+  }
+
+  h3 {
+    margin-bottom: 15px;
+    padding: 20px 30px;
+    background-color: $brand-color;
+    font-size: 1.825rem;
+    cursor: pointer;
+    color: #fff;
+    transition: .3s;
+    &:hover{
+      background-color: $brand-color-hover;
+    }
+  }
+
+  h4 {
+    color: $brand-color;
+    text-transform: uppercase;
+  }
+
+  h5 {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    color: #fff;
+    line-height: 2.125rem;
+    text-transform: uppercase;
+  }
+
+  h6{
+    font-size: 1.125rem;
+    color: #fff;
+    margin-bottom: 1.875rem;
+    font-weight: 400;
+    a {
+      color: $brand-color;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  b {
+    color: $brand-color;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 1.875rem;
+    line-height: 1.5rem;
+    &.__gold {
+      color: $brand-color;
+    }
+    a {
+      color: $brand-color;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  ul {
+    li {
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 1.875rem;
+    }
+  }
+
+  .item-referral_wrapper {
+    width: 50%;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    p {
+      font-size: 1rem;
+      color: #fff;
+      line-height: 1.5rem;
+    }
+  }
+
+  .tw{
+    margin-bottom: 30px;
+  }
+
+}
