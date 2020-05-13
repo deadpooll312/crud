@@ -8,7 +8,7 @@ export const FailedPage = inject('store')(observer(({store}) => {
   const history = useHistory();
   
   const home = useCallback(() => {
-    history.push('/');
+    history.push('/date');
   }, [history]);
   
   return <Fragment>

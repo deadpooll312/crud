@@ -61,9 +61,9 @@ export const Header = inject("store")(
                 <a className="brand-link" onClick={() => push('')}>
                   BEFREE. BINGO
                 </a>
-                <a className="link-item" onClick={() => push('terms')}>
-                  Правила
-                </a>
+                {store.auth.user.email && <a className="link-item" onClick={() => push('date')}>
+                  Личный кабинет
+                </a>}
                 <a className="link-item" onClick={() => push('rules')}>
                   Как сделать ставку
                 </a>
@@ -77,11 +77,11 @@ export const Header = inject("store")(
               </span>
               {showMenu && (
                 <ul className="mobile-list">
-                  <li>
-                    <a className="link-item" onClick={() => push('terms')}>
-                      Правила
+                  {store.auth.user.email && <li>
+                    <a className="link-item" onClick={() => push('date')}>
+                      Личный кабинет
                     </a>
-                  </li>
+                  </li>}
                   <li>
                     <a  onClick={() => push('rules')} className="link-item">
                       Как сделать ставку

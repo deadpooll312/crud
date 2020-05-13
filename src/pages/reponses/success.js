@@ -12,15 +12,15 @@ export const SuccessPage = inject('store')(observer(({store}) => {
   }, [store.auth]);
 
   const home = useCallback(() => {
-    history.push('/');
+    history.push('/date');
   }, [history]);
 
   return <Fragment>
     <Header />
     <div className="success-banner reposes-banner">
       <div className="center-box">
-        <h3>Ваш баланс пополнен успешно</h3>
-        <button className="btn btn_reposes" onClick={home}>На главную</button>
+        <h3>Опурерация прошла успешно</h3>
+        <button className="btn btn_reposes" onClick={home}>Вернуться в личный кабинет</button>
       </div>
     </div>
     <Footer />
