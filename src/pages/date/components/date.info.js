@@ -1,5 +1,6 @@
 import {inject, observer} from "mobx-react";
 import React from "react";
+import {Link} from "react-router-dom";
 
 export const DateInfo = inject('store')(observer(({store, show, hidePopup}) => {
   return <div className="info-personal">
@@ -16,7 +17,7 @@ export const DateInfo = inject('store')(observer(({store, show, hidePopup}) => {
     <div className="info-item">
       <div className="img-wrapper">
       </div>
-      <p>Принимай участие в реферальной программе и получай 50% от выигрыша вашего реферала в случае его победы! <a href="#">Подробнее</a></p>
+      <p>Принимай участие в реферальной программе и получай 50% от выигрыша вашего реферала в случае его победы! <Link to="/program">Подробнее</Link></p>
     </div>
   </div>
 }));

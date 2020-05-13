@@ -3,14 +3,23 @@ import {inject, observer} from "mobx-react";
 import {useHistory} from "react-router";
 import { Header } from "../../components/header";
 import { Footer } from "../../components/footer";
+import moment from "moment";
 
 export const MainPage = inject("store")(observer(({store}) => {
-    const [show, setShow] = useState(false);
+  const oldDate = new Date('Tue May 12 2020 00:00:00');
+  const getDiff = () => moment.duration(moment(new Date()).diff(moment(oldDate))).asSeconds();
+  const [diff, setDiff] = useState(getDiff());
+  const [show, setShow] = useState(false);
     const history = useHistory();
     const banner = useRef(null);
     const programRef = useRef(null);
 
     useEffect(() => store.auth.getUser(), [])
+  
+  useEffect(() => {
+    store.auth.getUser();
+    setInterval(() => setDiff(getDiff()), 1000);
+  }, []);
   
     const getDate = useCallback(() => {
       if (store.auth.user.email) {
@@ -31,6 +40,8 @@ export const MainPage = inject("store")(observer(({store}) => {
             <ul>
               <li><span className="circle"></span>Устал от карантина?</li>
               <li><span className="circle"></span>Хочешь улететь за границу</li>
+              <li><span className="circle"></span>Джекпот на 10 мая 2020 года составляет: {diff &&
+              <b>{(1000000 + (diff * .1)).toFixed(1)}0 рублей</b>}</li>
             </ul>
             {show && <div className="information-tooltip" onClick={() => setShow(false)}>
               <div className="close-icon">x</div>
@@ -78,7 +89,7 @@ export const MainPage = inject("store")(observer(({store}) => {
                       </defs>
                     </svg>
                   </div>
-                  <h4>СПРОГНОЗИРУЙ</h4>
+                  <h4>ПРОГНОЗИРУЙ</h4>
                   <p>дату открытия границ</p>
                 </div>
               </div>
@@ -115,7 +126,7 @@ export const MainPage = inject("store")(observer(({store}) => {
                       </defs>
                     </svg>
                   </div>
-                  <h4>ВЫПОЛНИ</h4>
+                  <h4>Делай</h4>
                   <p>всего одну ставку на указанную дату</p>
                 </div>
               </div>
@@ -153,8 +164,8 @@ export const MainPage = inject("store")(observer(({store}) => {
                       </defs>
                     </svg>
                   </div>
-                  <h4>ЗАБИРАЙ ДЖЕКПОТ</h4>
-                  <p>через 24 часа после открытия границ</p>
+                  <h4>ЗАБИРАЙ</h4>
+                  <p>Джекпот через 24 часа после открытия границ</p>
                 </div>
               </div>
             
@@ -175,7 +186,7 @@ export const MainPage = inject("store")(observer(({store}) => {
                 <p>в нашем децентрализованном блокчейне на 10$ (750 рублей). На одну дату можно выполнить только одну ставку</p>
               </div>
               <div className="item-regulations __right-block">
-                <h4>3. Получай джекпот</h4>
+                <h4>3. Получи джекпот</h4>
                 <p>если ты верно угадал дату открытия границ, и воплощай в жизнь путешествие своей мечты!</p>
               </div>
             </div>

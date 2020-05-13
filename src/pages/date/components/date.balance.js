@@ -21,7 +21,7 @@ export const DateBalance = inject('store')(observer(({store}) => {
     
 
     <div className="info-block">
-      <h3 className="title balance-title">баланс: <span>{auth.user.balance}$</span></h3>
+      <h3 className="title balance-title">баланс: <span>{auth.user.balance}₽</span></h3>
       <p>Минимальная сумма пополнения баланса - 750 рублей.</p>
       <div className="btn_wrapper">
         <button

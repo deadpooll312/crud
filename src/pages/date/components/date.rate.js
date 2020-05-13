@@ -17,7 +17,7 @@ export const DateRate = inject("store")(
     const day = ("0" + date.getDate()).slice(-2);
     const month = ("0" + (date.getMonth() + 1)).slice(-2);
     const [dateValue, setValue] = useState(`${day}/${month}/20`);
-    const [amount, setAmount] = useState(100);
+    const [amount, setAmount] = useState(750);
     const [show, setShow] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
     const [error, setError] = useState(null);
@@ -41,6 +41,7 @@ export const DateRate = inject("store")(
           setShowSuccess(true);
           setShow(false);
           auth.getUser();
+          auth.getHistory();
 
           setTimeout(() => {
             setShowSuccess(false);
